@@ -1,0 +1,142 @@
+{
+  "_notice": "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hmnsq.github.io/anasim/spec/patch.schema.json",
+  "title": "anasim patch 1",
+  "description": "An analogue computer program (ANA-01): computing elements, their connections and coefficients, initial conditions and mode control. Values are in the problem units of the computational model the patch realises; the patch compiler scales them to the machine unit and to machine time (ANA-03). Expressions use the restricted grammar of hmnsq/subcore (spec/grammar/expr.ebnf) over the model's parameters and initial values (<state>_0). Graph checks the schema cannot state (an input naming no element, an algebraic loop without an integrator) are made by docs/src/patch.js.",
+  "type": "object",
+  "required": ["_notice", "format", "patch", "elements", "outputs"],
+  "additionalProperties": false,
+  "properties": {
+    "_notice": {"type": "string", "pattern": "^© 1993–2026 Abhishek Choudhary\\. All rights reserved\\. AyeAI\\."},
+    "format": {"const": "anasim-patch 1"},
+    "patch": {
+      "type": "object",
+      "required": ["id", "version", "title", "model"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/name"},
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "title": {"type": "string", "minLength": 1},
+        "description": {"type": "string"},
+        "model": {
+          "type": "object",
+          "required": ["id", "version"],
+          "additionalProperties": false,
+          "properties": {
+            "id": {"type": "string"},
+            "version": {"type": "string"},
+            "note": {"type": "string"}
+          }
+        },
+        "generator": {"type": "string"},
+        "planted_defect": {"type": "string", "description": "Set only on the planted-defect patches of tests/defects/; names the defect the validator must refuse."}
+      }
+    },
+    "machine": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "time_scale": {"oneOf": [{"const": "auto"}, {"type": "number", "exclusiveMinimum": 0}],
+          "description": "Machine seconds per problem second, or auto: the compiler chooses a power of ten so the fastest integrator gain stays inside the elements' bandwidth."},
+        "bandwidth_margin": {"type": "number", "exclusiveMinimum": 1,
+          "description": "The fastest machine integrator gain is at most 2 pi GBW / bandwidth_margin (default 1000)."}
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "description": "Settable values: each names a constant element whose value a run may override (for example the operands of an adder).",
+      "items": {"type": "object", "required": ["name", "element"], "additionalProperties": false,
+        "properties": {"name": {"$ref": "#/$defs/name"}, "element": {"$ref": "#/$defs/name"}, "description": {"type": "string"}}}
+    },
+    "elements": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/element"}},
+    "outputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "element"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {"$ref": "#/$defs/name"},
+          "element": {"$ref": "#/$defs/name"},
+          "expression": {"type": "string", "description": "The model expression this output stands for; defaults to the element's represents."}
+        }
+      }
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "t1": {"type": "number", "exclusiveMinimum": 0, "description": "Problem-time horizon; defaults to the model's."},
+        "h": {"type": "number", "exclusiveMinimum": 0, "description": "Problem-time RK4 step; defaults to the model's rk4_step."},
+        "modes": {
+          "type": "array",
+          "items": {"type": "object", "required": ["mode"], "additionalProperties": false,
+            "properties": {"mode": {"enum": ["ic", "operate", "hold"]}, "until": {"type": "number", "minimum": 0}}}
+        }
+      }
+    },
+    "notes": {"type": "string"}
+  },
+  "$defs": {
+    "name": {"type": "string", "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"},
+    "expr": {"oneOf": [{"type": "number"}, {"type": "string", "minLength": 1}]},
+    "input": {
+      "type": "object",
+      "required": ["from"],
+      "additionalProperties": false,
+      "properties": {
+        "from": {"$ref": "#/$defs/name"},
+        "weight": {"$ref": "#/$defs/expr"}
+      }
+    },
+    "element": {
+      "type": "object",
+      "required": ["id", "kind"],
+      "properties": {
+        "id": {"$ref": "#/$defs/name"},
+        "kind": {"enum": ["integrator", "summer", "inverter", "coefficient", "multiplier", "comparator", "limiter",
+                          "function_generator", "sample_hold", "constant"]},
+        "represents": {"type": "string", "description": "The model expression the element's output stands for, in problem units."},
+        "max": {"type": "number", "exclusiveMinimum": 0, "description": "Declared magnitude bound of the output, problem units; the scale factor."},
+        "inputs": {"type": "array", "items": {"$ref": "#/$defs/input"}},
+        "ic": {"$ref": "#/$defs/expr"},
+        "k": {"$ref": "#/$defs/expr"},
+        "value": {"$ref": "#/$defs/expr"},
+        "low": {"$ref": "#/$defs/expr"},
+        "high": {"$ref": "#/$defs/expr"},
+        "levels": {"type": "object", "required": ["below", "above"], "additionalProperties": false,
+          "properties": {"below": {"$ref": "#/$defs/expr"}, "above": {"$ref": "#/$defs/expr"}}},
+        "breakpoints": {"type": "array", "minItems": 2,
+          "items": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "minItems": 2, "maxItems": 2}},
+        "control": {"$ref": "#/$defs/input"},
+        "label": {"type": "string"},
+        "position": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "minItems": 2, "maxItems": 2}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {"if": {"properties": {"kind": {"const": "integrator"}}}, "then": {"required": ["inputs", "ic", "max", "represents"],
+          "properties": {"inputs": {"minItems": 1}}}},
+        {"if": {"properties": {"kind": {"const": "summer"}}}, "then": {"required": ["inputs", "max", "represents"],
+          "properties": {"inputs": {"minItems": 1}}}},
+        {"if": {"properties": {"kind": {"const": "inverter"}}}, "then": {"required": ["inputs", "represents"],
+          "properties": {"inputs": {"minItems": 1, "maxItems": 1}}}},
+        {"if": {"properties": {"kind": {"const": "coefficient"}}}, "then": {"required": ["inputs", "k", "represents"],
+          "properties": {"inputs": {"minItems": 1, "maxItems": 1}}}},
+        {"if": {"properties": {"kind": {"const": "multiplier"}}}, "then": {"required": ["inputs", "max", "represents"],
+          "properties": {"inputs": {"minItems": 2, "maxItems": 2}}}},
+        {"if": {"properties": {"kind": {"const": "comparator"}}}, "then": {"required": ["inputs", "levels", "max", "represents"],
+          "properties": {"inputs": {"minItems": 1}}}},
+        {"if": {"properties": {"kind": {"const": "limiter"}}}, "then": {"required": ["inputs", "low", "high", "represents"],
+          "properties": {"inputs": {"minItems": 1, "maxItems": 1}}}},
+        {"if": {"properties": {"kind": {"const": "function_generator"}}}, "then": {"required": ["inputs", "breakpoints", "max", "represents"],
+          "properties": {"inputs": {"minItems": 1, "maxItems": 1}}}},
+        {"if": {"properties": {"kind": {"const": "sample_hold"}}}, "then": {"required": ["inputs", "control", "represents"],
+          "properties": {"inputs": {"minItems": 1, "maxItems": 1}}}},
+        {"if": {"properties": {"kind": {"const": "constant"}}}, "then": {"required": ["value", "represents"],
+          "properties": {"inputs": {"maxItems": 0}}}}
+      ]
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+ "_notice": "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0",
+ "patch": "harmonic_oscillator 0.1.0",
+ "model": "harmonic-oscillator 1.0.0",
+ "factors": {
+  "compiler": "anasim.compile 0.1.0",
+  "machine_unit": {
+   "value": 1,
+   "shown_as_volts": 10,
+   "evidence": {
+    "state": "sourced",
+    "citation": "Sovereignty Architecture section 10, working decision RD11"
+   }
+  },
+  "time_scale": {
+   "T": 0.001,
+   "meaning": "machine seconds per problem second (tau = T t)",
+   "choice": "smallest power of ten with fastest gain 2/T <= 2 pi GBW / margin = 6283.185307179586",
+   "fastest_problem_rate": 2,
+   "fastest_at": "I_v",
+   "gain_limit": 6283.185307179586,
+   "gbw_hz": 1000000,
+   "gbw_evidence": {
+    "state": "assumed",
+    "assumption": "a generic general-purpose op-amp class"
+   },
+   "margin": 1000,
+   "fastest_machine_gain": 2000
+  },
+  "magnitude": [
+   {
+    "id": "I_v",
+    "kind": "integrator",
+    "represents": "v",
+    "M": 2.5,
+    "declared": true,
+    "volts_per_problem_unit": 4,
+    "machine": {
+     "a": [
+      2000
+     ],
+     "ic": 0
+    },
+    "from": {
+     "a": [
+      "w*M_in/(M*T) = 4*1.25/(2.5*0.001)"
+     ]
+    }
+   },
+   {
+    "id": "N_v",
+    "kind": "inverter",
+    "represents": "-v",
+    "M": 2.5,
+    "declared": false,
+    "volts_per_problem_unit": 4,
+    "machine": {
+     "a": [
+      1
+     ]
+    },
+    "from": {
+     "a": [
+      "M_in/M = 2.5/2.5"
+     ]
+    }
+   },
+   {
+    "id": "I_x",
+    "kind": "integrator",
+    "represents": "x",
+    "M": 1.25,
+    "declared": true,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "a": [
+      2000
+     ],
+     "ic": 0.8
+    },
+    "from": {
+     "a": [
+      "w*M_in/(M*T) = 1*2.5/(1.25*0.001)"
+     ]
+    }
+   }
+  ]
+ },
+ "model_check": {
+  "errors": [],
+  "worst": {
+   "I_v": 1.1084466677857563e-13,
+   "N_v": 0,
+   "I_x": 1.1022294188478554e-13
+  },
+  "approximations": []
+ }
+}

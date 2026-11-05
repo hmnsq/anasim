@@ -1,0 +1,11 @@
+© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. (this PROVENANCE file only)
+SPDX-License-Identifier: CC0-1.0
+
+file: add.16.vec
+source: hmnsq/repsynth conformance/vectors/balanced_ternary/add.16.vec (CNF-01 vectors of the balanced_ternary reference function bt_add16)
+repository: /home/user/build/repsynth (local repository of hmnsq/repsynth in this build)
+commit: 77cafc05de372b082d964bb9783818243e2d74bd
+tracked_at_commit: conformance/vectors/balanced_ternary/add.16.vec
+sha256: 551d05115a3e50f1c11b1c8bcfeae24e9ca7421f940a86021cf9292b6b7c407f
+sha256_at_commit: 551d05115a3e50f1c11b1c8bcfeae24e9ca7421f940a86021cf9292b6b7c407f
+rule: copied unchanged; the oracle for the balanced ternary adder patch (T-52); re-copied when repsynth regenerates it

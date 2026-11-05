@@ -1,0 +1,349 @@
+{
+ "_notice": "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0",
+ "patch": "function_generation 0.1.0",
+ "model": "function-generation 1.0.0",
+ "factors": {
+  "compiler": "anasim.compile 0.1.0",
+  "machine_unit": {
+   "value": 1,
+   "shown_as_volts": 10,
+   "evidence": {
+    "state": "sourced",
+    "citation": "Sovereignty Architecture section 10, working decision RD11"
+   }
+  },
+  "time_scale": {
+   "T": 0.01,
+   "meaning": "machine seconds per problem second (tau = T t)",
+   "choice": "smallest power of ten with fastest gain 7.2/T <= 2 pi GBW / margin = 6283.185307179586",
+   "fastest_problem_rate": 7.2,
+   "fastest_at": "I_T",
+   "gain_limit": 6283.185307179586,
+   "gbw_hz": 1000000,
+   "gbw_evidence": {
+    "state": "assumed",
+    "assumption": "a generic general-purpose op-amp class"
+   },
+   "margin": 1000,
+   "fastest_machine_gain": 720
+  },
+  "magnitude": [
+   {
+    "id": "K_m1",
+    "kind": "constant",
+    "represents": "-1",
+    "M": 1,
+    "declared": false,
+    "volts_per_problem_unit": 10,
+    "machine": {
+     "v": -1
+    },
+    "from": {
+     "v": "value/M, M = 1"
+    }
+   },
+   {
+    "id": "I_x",
+    "kind": "integrator",
+    "represents": "x",
+    "M": 1.25,
+    "declared": true,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "a": [
+      80
+     ],
+     "ic": 0
+    },
+    "from": {
+     "a": [
+      "w*M_in/(M*T) = 1*1/(1.25*0.01)"
+     ]
+    }
+   },
+   {
+    "id": "I_S",
+    "kind": "integrator",
+    "represents": "sin(pi*x)",
+    "M": 1.25,
+    "declared": true,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "a": [
+      314.15926535897927
+     ],
+     "ic": 0
+    },
+    "from": {
+     "a": [
+      "w*M_in/(M*T) = 3.141592653589793*1.25/(1.25*0.01)"
+     ]
+    }
+   },
+   {
+    "id": "I_C",
+    "kind": "integrator",
+    "represents": "cos(pi*x)",
+    "M": 1.25,
+    "declared": true,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "a": [
+      314.15926535897927
+     ],
+     "ic": 0.8
+    },
+    "from": {
+     "a": [
+      "w*M_in/(M*T) = 3.141592653589793*1.25/(1.25*0.01)"
+     ]
+    }
+   },
+   {
+    "id": "N_C",
+    "kind": "inverter",
+    "represents": "-cos(pi*x)",
+    "M": 1.25,
+    "declared": false,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "a": [
+      1
+     ]
+    },
+    "from": {
+     "a": [
+      "M_in/M = 1.25/1.25"
+     ]
+    }
+   },
+   {
+    "id": "I_E",
+    "kind": "integrator",
+    "represents": "exp(-x)",
+    "M": 1.25,
+    "declared": true,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "a": [
+      100
+     ],
+     "ic": 0.8
+    },
+    "from": {
+     "a": [
+      "w*M_in/(M*T) = 1*1.25/(1.25*0.01)"
+     ]
+    }
+   },
+   {
+    "id": "P_sq",
+    "kind": "multiplier",
+    "represents": "x^2",
+    "M": 1.25,
+    "declared": true,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "c": 1.25
+    },
+    "from": {
+     "c": "M_1*M_2/M = 1.25*1.25/1.25"
+    }
+   },
+   {
+    "id": "I_T",
+    "kind": "integrator",
+    "represents": "tanh(4*x - 2)",
+    "M": 1.25,
+    "declared": true,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "a": [
+      320,
+      400
+     ],
+     "ic": -0.7712220640606535
+    },
+    "from": {
+     "a": [
+      "w*M_in/(M*T) = 4*1/(1.25*0.01)",
+      "w*M_in/(M*T) = 4*1.25/(1.25*0.01)"
+     ]
+    }
+   },
+   {
+    "id": "P_TT",
+    "kind": "multiplier",
+    "represents": "tanh(4*x - 2)^2",
+    "M": 1.25,
+    "declared": true,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "c": 1.25
+    },
+    "from": {
+     "c": "M_1*M_2/M = 1.25*1.25/1.25"
+    }
+   },
+   {
+    "id": "G_abs",
+    "kind": "function_generator",
+    "represents": "abs(2*x - 1)",
+    "M": 1.25,
+    "declared": true,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "xs": [
+      0,
+      0.4,
+      0.8
+     ],
+     "ys": [
+      0.8,
+      0,
+      0.8
+     ]
+    },
+    "from": {
+     "breakpoints": "(x/M_in, y/M), M_in = 1.25, M = 1.25"
+    }
+   },
+   {
+    "id": "G_sqrt",
+    "kind": "function_generator",
+    "represents": "sqrt(x)",
+    "M": 1.25,
+    "declared": true,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "xs": [
+      0,
+      0.003125,
+      0.0125,
+      0.028125,
+      0.05,
+      0.078125,
+      0.1125,
+      0.153125,
+      0.2,
+      0.253125,
+      0.3125,
+      0.378125,
+      0.45,
+      0.528125,
+      0.6125,
+      0.703125,
+      0.8
+     ],
+     "ys": [
+      0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8
+     ]
+    },
+    "from": {
+     "breakpoints": "(x/M_in, y/M), M_in = 1.25, M = 1.25"
+    }
+   },
+   {
+    "id": "G_log",
+    "kind": "function_generator",
+    "represents": "log(1 + x)",
+    "M": 1.25,
+    "declared": true,
+    "volts_per_problem_unit": 8,
+    "machine": {
+     "xs": [
+      0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8
+     ],
+     "ys": [
+      0,
+      0.048499697453147875,
+      0.09422642852510676,
+      0.1374802055413274,
+      0.1785148410513678,
+      0.2175469723869134,
+      0.2547629848948277,
+      0.29032439495149476,
+      0.3243720864865315,
+      0.3570296821027356,
+      0.3884062526253606,
+      0.4185985150116383,
+      0.4476926303483381,
+      0.4757656861973542,
+      0.5028869275378993,
+      0.529118785796292,
+      0.5545177444479562
+     ]
+    },
+    "from": {
+     "breakpoints": "(x/M_in, y/M), M_in = 1.25, M = 1.25"
+    }
+   }
+  ]
+ },
+ "model_check": {
+  "errors": [],
+  "worst": {
+   "K_m1": 0,
+   "I_x": 3.6409097958767235e-12,
+   "I_S": 1.378051507698438e-10,
+   "I_C": 1.3686970016273033e-10,
+   "N_C": 0,
+   "I_E": 1.52380330575852e-11,
+   "P_sq": 0,
+   "I_T": 4.280870768980094e-10,
+   "P_TT": 0
+  },
+  "approximations": [
+   {
+    "element": "G_abs",
+    "represents": "abs(2*x - 1)",
+    "max_deviation_over_scale": 0,
+    "at": 0
+   },
+   {
+    "element": "G_sqrt",
+    "represents": "sqrt(x)",
+    "max_deviation_over_scale": 0.0017765093283163003,
+    "at": 0.046875
+   },
+   {
+    "element": "G_log",
+    "represents": "log(1 + x)",
+    "max_deviation_over_scale": 0.0003674782068290139,
+    "at": 0.03125
+   }
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+_notice: "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0"
+format: anasim-patch 1
+patch:
+  id: exponential_decay
+  version: 0.1.0
+  title: Exponential decay
+  description: One integrator with its own output fed back through weight k, dx/dt = -k x.
+  model: {id: exponential-decay, version: 1.0.0}
+machine: {time_scale: auto}
+elements:
+  - {id: I_x, kind: integrator, represents: x, max: 1.25, ic: x_0, inputs: [{from: I_x, weight: k}], position: [1, 0]}
+outputs:
+  - {name: x, element: I_x}

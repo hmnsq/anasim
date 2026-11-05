@@ -1,0 +1,1828 @@
+{
+ "test": "P11.9_mutation",
+ "passed": 134,
+ "failed": 0,
+ "checks": [
+  {
+   "id": "control: unmutated exponential-decay passes the oracle and the model check",
+   "ok": true,
+   "summary": "error over amplitude 1.92e-12 (bound 1e-4)"
+  },
+  {
+   "id": "exponential-decay summer sign I_x.inputs[0]",
+   "ok": true,
+   "summary": "error over amplitude 1.48e+2 (bound 1e-4); model check refuses (SEMANTIC at elements[0])"
+  },
+  {
+   "id": "exponential-decay coefficient I_x.inputs[0] x1.1",
+   "ok": true,
+   "summary": "error over amplitude 3.50e-2 (bound 1e-4); model check refuses (SEMANTIC at elements[0])"
+  },
+  {
+   "id": "exponential-decay initial condition I_x.ic",
+   "ok": true,
+   "summary": "error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[0].ic)"
+  },
+  {
+   "id": "control: unmutated harmonic-oscillator passes the oracle and the model check",
+   "ok": true,
+   "summary": "error over amplitude 5.24e-8 (bound 1e-4)"
+  },
+  {
+   "id": "harmonic-oscillator summer sign I_v.inputs[0]",
+   "ok": true,
+   "summary": "error over amplitude 1.18e+17 (bound 1e-4); model check refuses (SEMANTIC at elements[0])"
+  },
+  {
+   "id": "harmonic-oscillator coefficient I_v.inputs[0] x1.1",
+   "ok": true,
+   "summary": "error over amplitude 1.69e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[0])"
+  },
+  {
+   "id": "harmonic-oscillator initial condition I_v.ic",
+   "ok": true,
+   "summary": "error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[0].ic)"
+  },
+  {
+   "id": "harmonic-oscillator summer sign N_v (inverter made a unit coefficient)",
+   "ok": true,
+   "summary": "error over amplitude 1.18e+17 (bound 1e-4); model check refuses (SEMANTIC at elements[1])"
+  },
+  {
+   "id": "harmonic-oscillator summer sign I_x.inputs[0]",
+   "ok": true,
+   "summary": "error over amplitude 1.18e+17 (bound 1e-4); model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "harmonic-oscillator coefficient I_x.inputs[0] x1.1",
+   "ok": true,
+   "summary": "error over amplitude 1.61e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "harmonic-oscillator initial condition I_x.ic",
+   "ok": true,
+   "summary": "error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[2].ic)"
+  },
+  {
+   "id": "control: unmutated damped-driven-oscillator passes the oracle and the model check",
+   "ok": true,
+   "summary": "error over amplitude 7.46e-10 (bound 1e-4)"
+  },
+  {
+   "id": "damped-driven-oscillator summer sign I_c.inputs[0]",
+   "ok": true,
+   "summary": "error over amplitude 2.75e+9 (bound 1e-4); model check refuses (SEMANTIC at elements[0])"
+  },
+  {
+   "id": "damped-driven-oscillator coefficient I_c.inputs[0] x1.1",
+   "ok": true,
+   "summary": "error over amplitude 1.05e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[0])"
+  },
+  {
+   "id": "damped-driven-oscillator initial condition I_c.ic",
+   "ok": true,
+   "summary": "error over amplitude 1.51e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[0].ic)"
+  },
+  {
+   "id": "damped-driven-oscillator summer sign N_c (inverter made a unit coefficient)",
+   "ok": true,
+   "summary": "error over amplitude 2.75e+9 (bound 1e-4); model check refuses (SEMANTIC at elements[1])"
+  },
+  {
+   "id": "damped-driven-oscillator summer sign I_s.inputs[0]",
+   "ok": true,
+   "summary": "error over amplitude 2.75e+9 (bound 1e-4); model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "damped-driven-oscillator coefficient I_s.inputs[0] x1.1",
+   "ok": true,
+   "summary": "error over amplitude 1.05e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "damped-driven-oscillator initial condition I_s.ic",
+   "ok": true,
+   "summary": "error over amplitude 1.44e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[2].ic)"
+  },
+  {
+   "id": "damped-driven-oscillator summer sign I_v.inputs[0]",
+   "ok": true,
+   "summary": "error over amplitude 7.37e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[3])"
+  },
+  {
+   "id": "damped-driven-oscillator coefficient I_v.inputs[0] x1.1",
+   "ok": true,
+   "summary": "error over amplitude 4.69e-2 (bound 1e-4); model check refuses (SEMANTIC at elements[3])"
+  },
+  {
+   "id": "damped-driven-oscillator summer sign I_v.inputs[1]",
+   "ok": true,
+   "summary": "error over amplitude 3.62e+11 (bound 1e-4); model check refuses (SEMANTIC at elements[3])"
+  },
+  {
+   "id": "damped-driven-oscillator coefficient I_v.inputs[1] x1.1",
+   "ok": true,
+   "summary": "error over amplitude 2.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[3])"
+  },
+  {
+   "id": "damped-driven-oscillator summer sign I_v.inputs[2]",
+   "ok": true,
+   "summary": "error over amplitude 2.42e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[3])"
+  },
+  {
+   "id": "damped-driven-oscillator coefficient I_v.inputs[2] x1.1",
+   "ok": true,
+   "summary": "error over amplitude 1.21e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[3])"
+  },
+  {
+   "id": "damped-driven-oscillator initial condition I_v.ic",
+   "ok": true,
+   "summary": "error over amplitude 1.38e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[3].ic)"
+  },
+  {
+   "id": "damped-driven-oscillator summer sign N_v (inverter made a unit coefficient)",
+   "ok": true,
+   "summary": "error over amplitude 2.03e+11 (bound 1e-4); model check refuses (SEMANTIC at elements[4])"
+  },
+  {
+   "id": "damped-driven-oscillator summer sign I_x.inputs[0]",
+   "ok": true,
+   "summary": "error over amplitude 2.03e+11 (bound 1e-4); model check refuses (SEMANTIC at elements[5])"
+  },
+  {
+   "id": "damped-driven-oscillator coefficient I_x.inputs[0] x1.1",
+   "ok": true,
+   "summary": "error over amplitude 2.33e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[5])"
+  },
+  {
+   "id": "damped-driven-oscillator initial condition I_x.ic",
+   "ok": true,
+   "summary": "error over amplitude 1.39e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[5].ic)"
+  },
+  {
+   "id": "control: unmutated lorenz passes the oracle and the model check",
+   "ok": true,
+   "summary": "max abs error 6.59e-8 (bound 1e-6)"
+  },
+  {
+   "id": "lorenz summer sign I_x.inputs[0]",
+   "ok": true,
+   "summary": "run refused: NONFINITE at I_y: state I_y is -Infinity at machine time t=0.0637; model check refuses (SEMANTIC at elements[0])"
+  },
+  {
+   "id": "lorenz coefficient I_x.inputs[0] x1.1",
+   "ok": true,
+   "summary": "max abs error 8.10e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[0])"
+  },
+  {
+   "id": "lorenz summer sign I_x.inputs[1]",
+   "ok": true,
+   "summary": "max abs error 4.64e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[0])"
+  },
+  {
+   "id": "lorenz coefficient I_x.inputs[1] x1.1",
+   "ok": true,
+   "summary": "max abs error 7.97e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[0])"
+  },
+  {
+   "id": "lorenz initial condition I_x.ic",
+   "ok": true,
+   "summary": "max abs error 2.49e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[0].ic)"
+  },
+  {
+   "id": "lorenz summer sign N_x (inverter made a unit coefficient)",
+   "ok": true,
+   "summary": "max abs error 4.64e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[1])"
+  },
+  {
+   "id": "lorenz summer sign I_y.inputs[0]",
+   "ok": true,
+   "summary": "max abs error 4.64e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "lorenz coefficient I_y.inputs[0] x1.1",
+   "ok": true,
+   "summary": "max abs error 9.09e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "lorenz summer sign I_y.inputs[1]",
+   "ok": true,
+   "summary": "run refused: NONFINITE at I_y: state I_y is Infinity at machine time t=0.0351; model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "lorenz coefficient I_y.inputs[1] x1.1",
+   "ok": true,
+   "summary": "max abs error 4.67e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "lorenz summer sign I_y.inputs[2]",
+   "ok": true,
+   "summary": "max abs error 2.91e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "lorenz coefficient I_y.inputs[2] x1.1",
+   "ok": true,
+   "summary": "max abs error 1.34e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "lorenz initial condition I_y.ic",
+   "ok": true,
+   "summary": "max abs error 2.74e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[2].ic)"
+  },
+  {
+   "id": "lorenz summer sign N_y (inverter made a unit coefficient)",
+   "ok": true,
+   "summary": "max abs error 4.64e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[3])"
+  },
+  {
+   "id": "lorenz summer sign I_z.inputs[0]",
+   "ok": true,
+   "summary": "run refused: NONFINITE at I_y: state I_y is Infinity at machine time t=0.036000000000000004; model check refuses (SEMANTIC at elements[4])"
+  },
+  {
+   "id": "lorenz coefficient I_z.inputs[0] x1.1",
+   "ok": true,
+   "summary": "max abs error 2.19e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[4])"
+  },
+  {
+   "id": "lorenz summer sign I_z.inputs[1]",
+   "ok": true,
+   "summary": "run refused: NONFINITE at I_y: state I_y is Infinity at machine time t=0.41910000000000003; model check refuses (SEMANTIC at elements[4])"
+  },
+  {
+   "id": "lorenz coefficient I_z.inputs[1] x1.1",
+   "ok": true,
+   "summary": "max abs error 6.08e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[4])"
+  },
+  {
+   "id": "lorenz initial condition I_z.ic",
+   "ok": true,
+   "summary": "max abs error 1.50e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[4].ic)"
+  },
+  {
+   "id": "control: unmutated function-generation passes the oracle and the model check",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 3.54e-11 (bound 1e-4)"
+  },
+  {
+   "id": "function-generation summer sign I_x.inputs[0]",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 2.00e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[1])"
+  },
+  {
+   "id": "function-generation coefficient I_x.inputs[0] x1.1",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 2.10e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[1])"
+  },
+  {
+   "id": "function-generation initial condition I_x.ic",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 2.66e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[1].ic)"
+  },
+  {
+   "id": "function-generation summer sign I_S.inputs[0]",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 1.15e+1 (bound 1e-4); model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "function-generation coefficient I_S.inputs[0] x1.1",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 1.60e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[2])"
+  },
+  {
+   "id": "function-generation initial condition I_S.ic",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[2].ic)"
+  },
+  {
+   "id": "function-generation summer sign I_C.inputs[0]",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 1.15e+1 (bound 1e-4); model check refuses (SEMANTIC at elements[3])"
+  },
+  {
+   "id": "function-generation coefficient I_C.inputs[0] x1.1",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 1.46e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[3])"
+  },
+  {
+   "id": "function-generation initial condition I_C.ic",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[3].ic)"
+  },
+  {
+   "id": "function-generation summer sign N_C (inverter made a unit coefficient)",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 1.15e+1 (bound 1e-4); model check refuses (SEMANTIC at elements[4])"
+  },
+  {
+   "id": "function-generation summer sign I_E.inputs[0]",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 2.35e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[5])"
+  },
+  {
+   "id": "function-generation coefficient I_E.inputs[0] x1.1",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 3.50e-2 (bound 1e-4); model check refuses (SEMANTIC at elements[5])"
+  },
+  {
+   "id": "function-generation initial condition I_E.ic",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[5].ic)"
+  },
+  {
+   "id": "function-generation summer sign I_T.inputs[0]",
+   "ok": true,
+   "summary": "run refused: NONFINITE at I_T: state I_T is -Infinity at machine time t=0.00204; model check refuses (SEMANTIC at elements[7])"
+  },
+  {
+   "id": "function-generation coefficient I_T.inputs[0] x1.1",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 5.27e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[7])"
+  },
+  {
+   "id": "function-generation summer sign I_T.inputs[1]",
+   "ok": true,
+   "summary": "run refused: NONFINITE at I_T: state I_T is Infinity at machine time t=0.00587; model check refuses (SEMANTIC at elements[7])"
+  },
+  {
+   "id": "function-generation coefficient I_T.inputs[1] x1.1",
+   "ok": true,
+   "summary": "run refused: NONFINITE at I_T: state I_T is -Infinity at machine time t=0.00623; model check refuses (SEMANTIC at elements[7])"
+  },
+  {
+   "id": "function-generation initial condition I_T.ic",
+   "ok": true,
+   "summary": "worst element-realised function error over amplitude 7.72e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[7].ic)"
+  },
+  {
+   "id": "control: unmutated balanced ternary adder passes",
+   "ok": true,
+   "summary": "0 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign S_0.inputs[0]",
+   "ok": true,
+   "summary": "2763 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient S_0.inputs[0] x1.1",
+   "ok": true,
+   "summary": "2763 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign S_0.inputs[1]",
+   "ok": true,
+   "summary": "2873 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient S_0.inputs[1] x1.1",
+   "ok": true,
+   "summary": "2873 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CP_0.inputs[0]",
+   "ok": true,
+   "summary": "959 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CP_0.inputs[0] x1.7",
+   "ok": true,
+   "summary": "914 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CP_0.inputs[1]",
+   "ok": true,
+   "summary": "3281 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CP_0.inputs[1] x1.7",
+   "ok": true,
+   "summary": "493 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CN_0.inputs[0]",
+   "ok": true,
+   "summary": "959 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CN_0.inputs[0] x1.7",
+   "ok": true,
+   "summary": "986 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CN_0.inputs[1]",
+   "ok": true,
+   "summary": "3281 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CN_0.inputs[1] x1.7",
+   "ok": true,
+   "summary": "466 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign Z_0.inputs[0]",
+   "ok": true,
+   "summary": "2859 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient Z_0.inputs[0] x1.1",
+   "ok": true,
+   "summary": "2859 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign Z_0.inputs[1]",
+   "ok": true,
+   "summary": "493 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient Z_0.inputs[1] x1.1",
+   "ok": true,
+   "summary": "493 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign Z_0.inputs[2]",
+   "ok": true,
+   "summary": "466 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient Z_0.inputs[2] x1.1",
+   "ok": true,
+   "summary": "466 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign S_1.inputs[0]",
+   "ok": true,
+   "summary": "2859 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient S_1.inputs[0] x1.1",
+   "ok": true,
+   "summary": "2859 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign S_1.inputs[1]",
+   "ok": true,
+   "summary": "2798 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient S_1.inputs[1] x1.1",
+   "ok": true,
+   "summary": "2798 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign S_1.inputs[2]",
+   "ok": true,
+   "summary": "493 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient S_1.inputs[2] x1.1",
+   "ok": true,
+   "summary": "493 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign S_1.inputs[3]",
+   "ok": true,
+   "summary": "466 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient S_1.inputs[3] x1.1",
+   "ok": true,
+   "summary": "466 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CP_1.inputs[0]",
+   "ok": true,
+   "summary": "1027 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CP_1.inputs[0] x1.7",
+   "ok": true,
+   "summary": "983 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CP_1.inputs[1]",
+   "ok": true,
+   "summary": "3213 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CP_1.inputs[1] x1.7",
+   "ok": true,
+   "summary": "464 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CN_1.inputs[0]",
+   "ok": true,
+   "summary": "1027 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CN_1.inputs[0] x1.7",
+   "ok": true,
+   "summary": "964 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CN_1.inputs[1]",
+   "ok": true,
+   "summary": "3213 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CN_1.inputs[1] x1.7",
+   "ok": true,
+   "summary": "454 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign Z_1.inputs[0]",
+   "ok": true,
+   "summary": "2974 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient Z_1.inputs[0] x1.1",
+   "ok": true,
+   "summary": "2974 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign Z_1.inputs[1]",
+   "ok": true,
+   "summary": "521 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient Z_1.inputs[1] x1.1",
+   "ok": true,
+   "summary": "521 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign Z_1.inputs[2]",
+   "ok": true,
+   "summary": "506 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient Z_1.inputs[2] x1.1",
+   "ok": true,
+   "summary": "506 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign S_15.inputs[0]",
+   "ok": true,
+   "summary": "2785 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient S_15.inputs[0] x1.1",
+   "ok": true,
+   "summary": "2785 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign S_15.inputs[1]",
+   "ok": true,
+   "summary": "2781 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient S_15.inputs[1] x1.1",
+   "ok": true,
+   "summary": "2781 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign S_15.inputs[2]",
+   "ok": true,
+   "summary": "502 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient S_15.inputs[2] x1.1",
+   "ok": true,
+   "summary": "502 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign S_15.inputs[3]",
+   "ok": true,
+   "summary": "556 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient S_15.inputs[3] x1.1",
+   "ok": true,
+   "summary": "556 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CP_15.inputs[0]",
+   "ok": true,
+   "summary": "1049 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CP_15.inputs[0] x1.7",
+   "ok": true,
+   "summary": "972 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CP_15.inputs[1]",
+   "ok": true,
+   "summary": "3191 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CP_15.inputs[1] x1.7",
+   "ok": true,
+   "summary": "455 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CN_15.inputs[0]",
+   "ok": true,
+   "summary": "1049 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CN_15.inputs[0] x1.7",
+   "ok": true,
+   "summary": "920 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign CN_15.inputs[1]",
+   "ok": true,
+   "summary": "3191 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient CN_15.inputs[1] x1.7",
+   "ok": true,
+   "summary": "470 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign Z_15.inputs[0]",
+   "ok": true,
+   "summary": "2941 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient Z_15.inputs[0] x1.1",
+   "ok": true,
+   "summary": "2941 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign Z_15.inputs[1]",
+   "ok": true,
+   "summary": "512 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient Z_15.inputs[1] x1.1",
+   "ok": true,
+   "summary": "512 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition summer sign Z_15.inputs[2]",
+   "ok": true,
+   "summary": "537 of 4240 vectors wrong"
+  },
+  {
+   "id": "balanced-ternary-addition coefficient Z_15.inputs[2] x1.1",
+   "ok": true,
+   "summary": "537 of 4240 vectors wrong"
+  },
+  {
+   "id": "all three defect kinds planted",
+   "ok": true,
+   "summary": "summer sign, coefficient, initial condition"
+  }
+ ],
+ "mutants": [
+  {
+   "patch": "exponential-decay",
+   "kind": "summer sign",
+   "where": "I_x.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.48e+2 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0]"
+  },
+  {
+   "patch": "exponential-decay",
+   "kind": "coefficient",
+   "where": "I_x.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 3.50e-2 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0]"
+  },
+  {
+   "patch": "exponential-decay",
+   "kind": "initial condition",
+   "where": "I_x.ic",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.25e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0].ic"
+  },
+  {
+   "patch": "harmonic-oscillator",
+   "kind": "summer sign",
+   "where": "I_v.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.18e+17 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0]"
+  },
+  {
+   "patch": "harmonic-oscillator",
+   "kind": "coefficient",
+   "where": "I_v.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.69e+0 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0]"
+  },
+  {
+   "patch": "harmonic-oscillator",
+   "kind": "initial condition",
+   "where": "I_v.ic",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.25e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0].ic"
+  },
+  {
+   "patch": "harmonic-oscillator",
+   "kind": "summer sign",
+   "where": "N_v (inverter made a unit coefficient)",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.18e+17 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[1]"
+  },
+  {
+   "patch": "harmonic-oscillator",
+   "kind": "summer sign",
+   "where": "I_x.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.18e+17 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "harmonic-oscillator",
+   "kind": "coefficient",
+   "where": "I_x.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.61e+0 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "harmonic-oscillator",
+   "kind": "initial condition",
+   "where": "I_x.ic",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.25e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2].ic"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "summer sign",
+   "where": "I_c.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 2.75e+9 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "coefficient",
+   "where": "I_c.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.05e+0 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "initial condition",
+   "where": "I_c.ic",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.51e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0].ic"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "summer sign",
+   "where": "N_c (inverter made a unit coefficient)",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 2.75e+9 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[1]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "summer sign",
+   "where": "I_s.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 2.75e+9 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "coefficient",
+   "where": "I_s.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.05e+0 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "initial condition",
+   "where": "I_s.ic",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.44e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2].ic"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "summer sign",
+   "where": "I_v.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 7.37e+0 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[3]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "coefficient",
+   "where": "I_v.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 4.69e-2 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[3]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "summer sign",
+   "where": "I_v.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 3.62e+11 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[3]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "coefficient",
+   "where": "I_v.inputs[1] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 2.25e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[3]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "summer sign",
+   "where": "I_v.inputs[2]",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 2.42e+0 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[3]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "coefficient",
+   "where": "I_v.inputs[2] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.21e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[3]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "initial condition",
+   "where": "I_v.ic",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.38e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[3].ic"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "summer sign",
+   "where": "N_v (inverter made a unit coefficient)",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 2.03e+11 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[4]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "summer sign",
+   "where": "I_x.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 2.03e+11 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[5]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "coefficient",
+   "where": "I_x.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 2.33e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[5]"
+  },
+  {
+   "patch": "damped-driven-oscillator",
+   "kind": "initial condition",
+   "where": "I_x.ic",
+   "caught_by_oracle": true,
+   "oracle": "error over amplitude 1.39e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[5].ic"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "summer sign",
+   "where": "I_x.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "run refused: NONFINITE at I_y: state I_y is -Infinity at machine time t=0.0637",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "coefficient",
+   "where": "I_x.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 8.10e+0 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "summer sign",
+   "where": "I_x.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 4.64e+1 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "coefficient",
+   "where": "I_x.inputs[1] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 7.97e+0 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "initial condition",
+   "where": "I_x.ic",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 2.49e+1 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[0].ic"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "summer sign",
+   "where": "N_x (inverter made a unit coefficient)",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 4.64e+1 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[1]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "summer sign",
+   "where": "I_y.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 4.64e+1 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "coefficient",
+   "where": "I_y.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 9.09e+0 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "summer sign",
+   "where": "I_y.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "run refused: NONFINITE at I_y: state I_y is Infinity at machine time t=0.0351",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "coefficient",
+   "where": "I_y.inputs[1] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 4.67e+0 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "summer sign",
+   "where": "I_y.inputs[2]",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 2.91e+1 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "coefficient",
+   "where": "I_y.inputs[2] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 1.34e+0 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "initial condition",
+   "where": "I_y.ic",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 2.74e+1 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2].ic"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "summer sign",
+   "where": "N_y (inverter made a unit coefficient)",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 4.64e+1 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[3]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "summer sign",
+   "where": "I_z.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "run refused: NONFINITE at I_y: state I_y is Infinity at machine time t=0.036000000000000004",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[4]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "coefficient",
+   "where": "I_z.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 2.19e+0 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[4]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "summer sign",
+   "where": "I_z.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "run refused: NONFINITE at I_y: state I_y is Infinity at machine time t=0.41910000000000003",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[4]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "coefficient",
+   "where": "I_z.inputs[1] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 6.08e+0 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[4]"
+  },
+  {
+   "patch": "lorenz",
+   "kind": "initial condition",
+   "where": "I_z.ic",
+   "caught_by_oracle": true,
+   "oracle": "max abs error 1.50e+1 (bound 1e-6)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[4].ic"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "summer sign",
+   "where": "I_x.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 2.00e+0 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[1]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "coefficient",
+   "where": "I_x.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 2.10e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[1]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "initial condition",
+   "where": "I_x.ic",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 2.66e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[1].ic"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "summer sign",
+   "where": "I_S.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 1.15e+1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "coefficient",
+   "where": "I_S.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 1.60e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "initial condition",
+   "where": "I_S.ic",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 1.25e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[2].ic"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "summer sign",
+   "where": "I_C.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 1.15e+1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[3]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "coefficient",
+   "where": "I_C.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 1.46e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[3]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "initial condition",
+   "where": "I_C.ic",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 1.25e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[3].ic"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "summer sign",
+   "where": "N_C (inverter made a unit coefficient)",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 1.15e+1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[4]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "summer sign",
+   "where": "I_E.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 2.35e+0 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[5]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "coefficient",
+   "where": "I_E.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 3.50e-2 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[5]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "initial condition",
+   "where": "I_E.ic",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 1.25e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[5].ic"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "summer sign",
+   "where": "I_T.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "run refused: NONFINITE at I_T: state I_T is -Infinity at machine time t=0.00204",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[7]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "coefficient",
+   "where": "I_T.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 5.27e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[7]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "summer sign",
+   "where": "I_T.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "run refused: NONFINITE at I_T: state I_T is Infinity at machine time t=0.00587",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[7]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "coefficient",
+   "where": "I_T.inputs[1] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "run refused: NONFINITE at I_T: state I_T is -Infinity at machine time t=0.00623",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[7]"
+  },
+  {
+   "patch": "function-generation",
+   "kind": "initial condition",
+   "where": "I_T.ic",
+   "caught_by_oracle": true,
+   "oracle": "worst element-realised function error over amplitude 7.72e-1 (bound 1e-4)",
+   "caught_by_model_check": true,
+   "model_check": "SEMANTIC at elements[7].ic"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "S_0.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "2763 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "S_0.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "2763 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "S_0.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "2873 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "S_0.inputs[1] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "2873 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CP_0.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "959 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CP_0.inputs[0] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "914 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CP_0.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "3281 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CP_0.inputs[1] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "493 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CN_0.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "959 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CN_0.inputs[0] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "986 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CN_0.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "3281 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CN_0.inputs[1] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "466 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "Z_0.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "2859 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "Z_0.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "2859 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "Z_0.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "493 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "Z_0.inputs[1] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "493 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "Z_0.inputs[2]",
+   "caught_by_oracle": true,
+   "oracle": "466 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "Z_0.inputs[2] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "466 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "S_1.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "2859 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "S_1.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "2859 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "S_1.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "2798 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "S_1.inputs[1] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "2798 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "S_1.inputs[2]",
+   "caught_by_oracle": true,
+   "oracle": "493 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "S_1.inputs[2] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "493 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "S_1.inputs[3]",
+   "caught_by_oracle": true,
+   "oracle": "466 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "S_1.inputs[3] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "466 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CP_1.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "1027 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CP_1.inputs[0] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "983 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CP_1.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "3213 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CP_1.inputs[1] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "464 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CN_1.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "1027 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CN_1.inputs[0] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "964 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CN_1.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "3213 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CN_1.inputs[1] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "454 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "Z_1.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "2974 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "Z_1.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "2974 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "Z_1.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "521 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "Z_1.inputs[1] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "521 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "Z_1.inputs[2]",
+   "caught_by_oracle": true,
+   "oracle": "506 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "Z_1.inputs[2] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "506 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "S_15.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "2785 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "S_15.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "2785 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "S_15.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "2781 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "S_15.inputs[1] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "2781 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "S_15.inputs[2]",
+   "caught_by_oracle": true,
+   "oracle": "502 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "S_15.inputs[2] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "502 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "S_15.inputs[3]",
+   "caught_by_oracle": true,
+   "oracle": "556 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "S_15.inputs[3] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "556 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CP_15.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "1049 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CP_15.inputs[0] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "972 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CP_15.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "3191 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CP_15.inputs[1] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "455 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CN_15.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "1049 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CN_15.inputs[0] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "920 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "CN_15.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "3191 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "CN_15.inputs[1] x1.7",
+   "caught_by_oracle": true,
+   "oracle": "470 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "Z_15.inputs[0]",
+   "caught_by_oracle": true,
+   "oracle": "2941 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "Z_15.inputs[0] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "2941 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "Z_15.inputs[1]",
+   "caught_by_oracle": true,
+   "oracle": "512 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "Z_15.inputs[1] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "512 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "summer sign",
+   "where": "Z_15.inputs[2]",
+   "caught_by_oracle": true,
+   "oracle": "537 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  },
+  {
+   "patch": "balanced-ternary-addition",
+   "kind": "coefficient",
+   "where": "Z_15.inputs[2] x1.1",
+   "caught_by_oracle": true,
+   "oracle": "537 of 4240 vectors wrong",
+   "caught_by_model_check": null,
+   "model_check": "not applicable: a discrete model has no equations"
+  }
+ ],
+ "score": {
+  "planted": 127,
+  "caught_by_oracle": 127,
+  "caught_by_model_check": 65
+ },
+ "seconds": 18.115
+}

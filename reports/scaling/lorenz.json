@@ -1,0 +1,175 @@
+{
+ "_notice": "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0",
+ "patch": "lorenz 0.1.0",
+ "model": "lorenz 1.0.0",
+ "factors": {
+  "compiler": "anasim.compile 0.1.0",
+  "machine_unit": {
+   "value": 1,
+   "shown_as_volts": 10,
+   "evidence": {
+    "state": "sourced",
+    "citation": "Sovereignty Architecture section 10, working decision RD11"
+   }
+  },
+  "time_scale": {
+   "T": 0.1,
+   "meaning": "machine seconds per problem second (tau = T t)",
+   "choice": "smallest power of ten with fastest gain 63.857142857142854/T <= 2 pi GBW / margin = 6283.185307179586",
+   "fastest_problem_rate": 63.857142857142854,
+   "fastest_at": "I_y",
+   "gain_limit": 6283.185307179586,
+   "gbw_hz": 1000000,
+   "gbw_evidence": {
+    "state": "assumed",
+    "assumption": "a generic general-purpose op-amp class"
+   },
+   "margin": 1000,
+   "fastest_machine_gain": 638.5714285714286
+  },
+  "magnitude": [
+   {
+    "id": "I_x",
+    "kind": "integrator",
+    "represents": "x",
+    "M": 25,
+    "declared": true,
+    "volts_per_problem_unit": 0.4,
+    "machine": {
+     "a": [
+      100,
+      140
+     ],
+     "ic": 0.04
+    },
+    "from": {
+     "a": [
+      "w*M_in/(M*T) = 10*25/(25*0.1)",
+      "w*M_in/(M*T) = 10*35/(25*0.1)"
+     ]
+    }
+   },
+   {
+    "id": "N_x",
+    "kind": "inverter",
+    "represents": "-x",
+    "M": 25,
+    "declared": false,
+    "volts_per_problem_unit": 0.4,
+    "machine": {
+     "a": [
+      1
+     ]
+    },
+    "from": {
+     "a": [
+      "M_in/M = 25/25"
+     ]
+    }
+   },
+   {
+    "id": "I_y",
+    "kind": "integrator",
+    "represents": "y",
+    "M": 35,
+    "declared": true,
+    "volts_per_problem_unit": 0.2857142857142857,
+    "machine": {
+     "a": [
+      200,
+      428.57142857142856,
+      10
+     ],
+     "ic": 0.02857142857142857
+    },
+    "from": {
+     "a": [
+      "w*M_in/(M*T) = 28*25/(35*0.1)",
+      "w*M_in/(M*T) = 1*1500/(35*0.1)",
+      "w*M_in/(M*T) = 1*35/(35*0.1)"
+     ]
+    }
+   },
+   {
+    "id": "N_y",
+    "kind": "inverter",
+    "represents": "-y",
+    "M": 35,
+    "declared": false,
+    "volts_per_problem_unit": 0.2857142857142857,
+    "machine": {
+     "a": [
+      1
+     ]
+    },
+    "from": {
+     "a": [
+      "M_in/M = 35/35"
+     ]
+    }
+   },
+   {
+    "id": "I_z",
+    "kind": "integrator",
+    "represents": "z",
+    "M": 60,
+    "declared": true,
+    "volts_per_problem_unit": 0.16666666666666666,
+    "machine": {
+     "a": [
+      145.83333333333334,
+      26.666666666666668
+     ],
+     "ic": 0.016666666666666666
+    },
+    "from": {
+     "a": [
+      "w*M_in/(M*T) = 1*875/(60*0.1)",
+      "w*M_in/(M*T) = 2.6666666666666665*60/(60*0.1)"
+     ]
+    }
+   },
+   {
+    "id": "P_xz",
+    "kind": "multiplier",
+    "represents": "x*z",
+    "M": 1500,
+    "declared": true,
+    "volts_per_problem_unit": 0.006666666666666667,
+    "machine": {
+     "c": 1
+    },
+    "from": {
+     "c": "M_1*M_2/M = 25*60/1500"
+    }
+   },
+   {
+    "id": "P_nxy",
+    "kind": "multiplier",
+    "represents": "-x*y",
+    "M": 875,
+    "declared": true,
+    "volts_per_problem_unit": 0.011428571428571429,
+    "machine": {
+     "c": 1
+    },
+    "from": {
+     "c": "M_1*M_2/M = 25*35/875"
+    }
+   }
+  ]
+ },
+ "model_check": {
+  "errors": [],
+  "worst": {
+   "I_x": 6.398944866045245e-14,
+   "N_x": 0,
+   "I_y": 1.8426741614045264e-14,
+   "N_y": 0,
+   "I_z": 8.05227630605389e-14,
+   "P_xz": 0,
+   "P_nxy": 0
+  },
+  "approximations": []
+ }
+}

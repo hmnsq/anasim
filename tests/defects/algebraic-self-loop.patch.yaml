@@ -1,0 +1,15 @@
+_notice: "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0"
+format: anasim-patch 1
+patch:
+  id: defect_algebraic_self_loop
+  version: 0.1.0
+  title: "Planted defect: ALGEBRAIC_LOOP"
+  description: A summer whose output feeds its own input.
+  model: {id: harmonic-oscillator, version: 1.0.0}
+  planted_defect: ALGEBRAIC_LOOP
+elements:
+  - {id: I_v, kind: integrator, represents: v, max: 2.5, ic: v_0, inputs: [{from: I_x, weight: "omega^2"}]}
+  - {id: N_v, kind: summer, represents: -v, max: 2.5, inputs: [{from: I_v, weight: 1}, {from: N_v, weight: 0.1}]}
+  - {id: I_x, kind: integrator, represents: x, max: 1.25, ic: x_0, inputs: [{from: N_v, weight: 1}]}
+outputs:
+  - {name: x, element: I_x}

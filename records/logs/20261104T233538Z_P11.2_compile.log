@@ -1,0 +1,30 @@
+$ node tests/p11_2_compile.test.mjs
+PASS gate refuses a prediction with a wrong bound (planted: I_v max 1.6 -> 2.2): I_v: 0 predicted onset(s), 13 simulated; N_v: 0 predicted onset(s), 13 simulated
+PASS gate refuses a prediction with a wrong frequency (planted: omega 2 -> 2.1): I_v: 14 predicted onset(s), 13 simulated; N_v: 14 predicted onset(s), 13 simulated
+PASS evaluation in dependency order: reversed element list gives an identical run (lorenz): 51 rows x 7 elements compared
+PASS factors recorded balanced_ternary_addition: 97 elements, T = 1
+PASS factors recorded and undone damped_driven_oscillator: T = 0.001 (smallest power of ten with fastest gain 1.7833333333333334/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 1783.333 s-1 <= 6283.2
+PASS fastest gain inside the bandwidth limit damped_driven_oscillator
+PASS predicted overloads equal simulated damped_driven_oscillator: 0 predicted, 0 simulated, largest onset difference 0.00e+0 of the horizon (bound 1e-2)
+PASS factors recorded and undone exponential_decay: T = 0.0001 (smallest power of ten with fastest gain 0.5/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 5000.000 s-1 <= 6283.2
+PASS fastest gain inside the bandwidth limit exponential_decay
+PASS predicted overloads equal simulated exponential_decay: 0 predicted, 0 simulated, largest onset difference 0.00e+0 of the horizon (bound 1e-2)
+PASS factors recorded and undone function_generation: T = 0.01 (smallest power of ten with fastest gain 7.2/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 720.000 s-1 <= 6283.2
+PASS fastest gain inside the bandwidth limit function_generation
+PASS predicted overloads equal simulated function_generation: 0 predicted, 0 simulated, largest onset difference 0.00e+0 of the horizon (bound 1e-2)
+PASS factors recorded and undone harmonic_oscillator_overload: T = 0.001 (smallest power of ten with fastest gain 3.125/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 3125.000 s-1 <= 6283.2
+PASS fastest gain inside the bandwidth limit harmonic_oscillator_overload
+PASS predicted overloads equal simulated harmonic_oscillator_overload: 26 predicted, 26 simulated, largest onset difference 1.08e-11 of the horizon (bound 1e-2)
+PASS factors recorded and undone harmonic_oscillator: T = 0.001 (smallest power of ten with fastest gain 2/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 2000.000 s-1 <= 6283.2
+PASS fastest gain inside the bandwidth limit harmonic_oscillator
+PASS predicted overloads equal simulated harmonic_oscillator: 0 predicted, 0 simulated, largest onset difference 0.00e+0 of the horizon (bound 1e-2)
+PASS factors recorded and undone lorenz_overload: T = 0.1 (smallest power of ten with fastest gain 63.857142857142854/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 638.571 s-1 <= 6283.2
+PASS fastest gain inside the bandwidth limit lorenz_overload
+PASS predicted overloads equal simulated lorenz_overload: 1 predicted, 1 simulated, largest onset difference 1.11e-17 of the horizon (bound 1e-2)
+PASS factors recorded and undone lorenz: T = 0.1 (smallest power of ten with fastest gain 63.857142857142854/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 638.571 s-1 <= 6283.2
+PASS fastest gain inside the bandwidth limit lorenz
+PASS predicted overloads equal simulated lorenz: 0 predicted, 0 simulated, largest onset difference 0.00e+0 of the horizon (bound 1e-2)
+PASS at least two patches exercise overloads: 2 patch(es) overload
+[P11.2_compile] 26 passed, 0 failed; results reports/results/P11.2_compile.json
+
+[exit 0]

@@ -1,0 +1,164 @@
+_notice: "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0"
+format: anasim-patch 1
+patch:
+  id: balanced_ternary_addition
+  version: 0.1.0
+  title: Balanced ternary addition, 16 trits
+  description: >-
+    A 16-trit ripple adder of summers and comparators. Trit levels are one problem unit; stage i forms
+    a + b + k in S_i, its carry from two comparators at +1.5 and -1.5, and the sum trit a + b + k - 3 k in Z_i.
+    The final carry is dropped, so the word wraps modulo 3^n as the reference function does. The analogue column
+    of the build matrix marks balanced ternary not applicable; this patch is a demonstration of comparators,
+    checked exactly against the reference vectors.
+  model: {id: balanced-ternary-addition, version: 1.0.0}
+  generator: "tools/gen_patches.mjs 0.1.0"
+machine: {time_scale: 1.0}
+inputs:
+  - {name: a0, element: A_0}
+  - {name: b0, element: B_0}
+  - {name: a1, element: A_1}
+  - {name: b1, element: B_1}
+  - {name: a2, element: A_2}
+  - {name: b2, element: B_2}
+  - {name: a3, element: A_3}
+  - {name: b3, element: B_3}
+  - {name: a4, element: A_4}
+  - {name: b4, element: B_4}
+  - {name: a5, element: A_5}
+  - {name: b5, element: B_5}
+  - {name: a6, element: A_6}
+  - {name: b6, element: B_6}
+  - {name: a7, element: A_7}
+  - {name: b7, element: B_7}
+  - {name: a8, element: A_8}
+  - {name: b8, element: B_8}
+  - {name: a9, element: A_9}
+  - {name: b9, element: B_9}
+  - {name: a10, element: A_10}
+  - {name: b10, element: B_10}
+  - {name: a11, element: A_11}
+  - {name: b11, element: B_11}
+  - {name: a12, element: A_12}
+  - {name: b12, element: B_12}
+  - {name: a13, element: A_13}
+  - {name: b13, element: B_13}
+  - {name: a14, element: A_14}
+  - {name: b14, element: B_14}
+  - {name: a15, element: A_15}
+  - {name: b15, element: B_15}
+elements:
+  - {id: R_p1, kind: constant, represents: "1", value: 1.0, label: "reference +1", position: [0.0, -1.0]}
+  - {id: A_0, kind: constant, represents: a_0, max: 1.25, value: 0.0, position: [0.0, 0.0]}
+  - {id: B_0, kind: constant, represents: b_0, max: 1.25, value: 0.0, position: [0.0, 1.0]}
+  - {id: S_0, kind: summer, represents: "-(a_0 + b_0 + k_in)", max: 3.75, inputs: [{from: A_0, weight: 1.0}, {from: B_0, weight: 1.0}], position: [1.0, 0.0]}
+  - {id: CP_0, kind: comparator, represents: kp_0, max: 1.25, inputs: [{from: S_0, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 0.0]}
+  - {id: CN_0, kind: comparator, represents: kn_0, max: 1.25, inputs: [{from: S_0, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 1.0]}
+  - {id: Z_0, kind: summer, represents: z_0, max: 1.25, inputs: [{from: S_0, weight: 1.0}, {from: CP_0, weight: 3.0}, {from: CN_0, weight: 3.0}], position: [3.0, 0.0]}
+  - {id: A_1, kind: constant, represents: a_1, max: 1.25, value: 0.0, position: [0.0, 2.0]}
+  - {id: B_1, kind: constant, represents: b_1, max: 1.25, value: 0.0, position: [0.0, 3.0]}
+  - {id: S_1, kind: summer, represents: "-(a_1 + b_1 + k_0)", max: 3.75, inputs: [{from: A_1, weight: 1.0}, {from: B_1, weight: 1.0}, {from: CP_0, weight: 1.0}, {from: CN_0, weight: 1.0}], position: [1.0, 2.0]}
+  - {id: CP_1, kind: comparator, represents: kp_1, max: 1.25, inputs: [{from: S_1, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 2.0]}
+  - {id: CN_1, kind: comparator, represents: kn_1, max: 1.25, inputs: [{from: S_1, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 3.0]}
+  - {id: Z_1, kind: summer, represents: z_1, max: 1.25, inputs: [{from: S_1, weight: 1.0}, {from: CP_1, weight: 3.0}, {from: CN_1, weight: 3.0}], position: [3.0, 2.0]}
+  - {id: A_2, kind: constant, represents: a_2, max: 1.25, value: 0.0, position: [0.0, 4.0]}
+  - {id: B_2, kind: constant, represents: b_2, max: 1.25, value: 0.0, position: [0.0, 5.0]}
+  - {id: S_2, kind: summer, represents: "-(a_2 + b_2 + k_1)", max: 3.75, inputs: [{from: A_2, weight: 1.0}, {from: B_2, weight: 1.0}, {from: CP_1, weight: 1.0}, {from: CN_1, weight: 1.0}], position: [1.0, 4.0]}
+  - {id: CP_2, kind: comparator, represents: kp_2, max: 1.25, inputs: [{from: S_2, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 4.0]}
+  - {id: CN_2, kind: comparator, represents: kn_2, max: 1.25, inputs: [{from: S_2, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 5.0]}
+  - {id: Z_2, kind: summer, represents: z_2, max: 1.25, inputs: [{from: S_2, weight: 1.0}, {from: CP_2, weight: 3.0}, {from: CN_2, weight: 3.0}], position: [3.0, 4.0]}
+  - {id: A_3, kind: constant, represents: a_3, max: 1.25, value: 0.0, position: [0.0, 6.0]}
+  - {id: B_3, kind: constant, represents: b_3, max: 1.25, value: 0.0, position: [0.0, 7.0]}
+  - {id: S_3, kind: summer, represents: "-(a_3 + b_3 + k_2)", max: 3.75, inputs: [{from: A_3, weight: 1.0}, {from: B_3, weight: 1.0}, {from: CP_2, weight: 1.0}, {from: CN_2, weight: 1.0}], position: [1.0, 6.0]}
+  - {id: CP_3, kind: comparator, represents: kp_3, max: 1.25, inputs: [{from: S_3, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 6.0]}
+  - {id: CN_3, kind: comparator, represents: kn_3, max: 1.25, inputs: [{from: S_3, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 7.0]}
+  - {id: Z_3, kind: summer, represents: z_3, max: 1.25, inputs: [{from: S_3, weight: 1.0}, {from: CP_3, weight: 3.0}, {from: CN_3, weight: 3.0}], position: [3.0, 6.0]}
+  - {id: A_4, kind: constant, represents: a_4, max: 1.25, value: 0.0, position: [0.0, 8.0]}
+  - {id: B_4, kind: constant, represents: b_4, max: 1.25, value: 0.0, position: [0.0, 9.0]}
+  - {id: S_4, kind: summer, represents: "-(a_4 + b_4 + k_3)", max: 3.75, inputs: [{from: A_4, weight: 1.0}, {from: B_4, weight: 1.0}, {from: CP_3, weight: 1.0}, {from: CN_3, weight: 1.0}], position: [1.0, 8.0]}
+  - {id: CP_4, kind: comparator, represents: kp_4, max: 1.25, inputs: [{from: S_4, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 8.0]}
+  - {id: CN_4, kind: comparator, represents: kn_4, max: 1.25, inputs: [{from: S_4, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 9.0]}
+  - {id: Z_4, kind: summer, represents: z_4, max: 1.25, inputs: [{from: S_4, weight: 1.0}, {from: CP_4, weight: 3.0}, {from: CN_4, weight: 3.0}], position: [3.0, 8.0]}
+  - {id: A_5, kind: constant, represents: a_5, max: 1.25, value: 0.0, position: [0.0, 10.0]}
+  - {id: B_5, kind: constant, represents: b_5, max: 1.25, value: 0.0, position: [0.0, 11.0]}
+  - {id: S_5, kind: summer, represents: "-(a_5 + b_5 + k_4)", max: 3.75, inputs: [{from: A_5, weight: 1.0}, {from: B_5, weight: 1.0}, {from: CP_4, weight: 1.0}, {from: CN_4, weight: 1.0}], position: [1.0, 10.0]}
+  - {id: CP_5, kind: comparator, represents: kp_5, max: 1.25, inputs: [{from: S_5, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 10.0]}
+  - {id: CN_5, kind: comparator, represents: kn_5, max: 1.25, inputs: [{from: S_5, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 11.0]}
+  - {id: Z_5, kind: summer, represents: z_5, max: 1.25, inputs: [{from: S_5, weight: 1.0}, {from: CP_5, weight: 3.0}, {from: CN_5, weight: 3.0}], position: [3.0, 10.0]}
+  - {id: A_6, kind: constant, represents: a_6, max: 1.25, value: 0.0, position: [0.0, 12.0]}
+  - {id: B_6, kind: constant, represents: b_6, max: 1.25, value: 0.0, position: [0.0, 13.0]}
+  - {id: S_6, kind: summer, represents: "-(a_6 + b_6 + k_5)", max: 3.75, inputs: [{from: A_6, weight: 1.0}, {from: B_6, weight: 1.0}, {from: CP_5, weight: 1.0}, {from: CN_5, weight: 1.0}], position: [1.0, 12.0]}
+  - {id: CP_6, kind: comparator, represents: kp_6, max: 1.25, inputs: [{from: S_6, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 12.0]}
+  - {id: CN_6, kind: comparator, represents: kn_6, max: 1.25, inputs: [{from: S_6, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 13.0]}
+  - {id: Z_6, kind: summer, represents: z_6, max: 1.25, inputs: [{from: S_6, weight: 1.0}, {from: CP_6, weight: 3.0}, {from: CN_6, weight: 3.0}], position: [3.0, 12.0]}
+  - {id: A_7, kind: constant, represents: a_7, max: 1.25, value: 0.0, position: [0.0, 14.0]}
+  - {id: B_7, kind: constant, represents: b_7, max: 1.25, value: 0.0, position: [0.0, 15.0]}
+  - {id: S_7, kind: summer, represents: "-(a_7 + b_7 + k_6)", max: 3.75, inputs: [{from: A_7, weight: 1.0}, {from: B_7, weight: 1.0}, {from: CP_6, weight: 1.0}, {from: CN_6, weight: 1.0}], position: [1.0, 14.0]}
+  - {id: CP_7, kind: comparator, represents: kp_7, max: 1.25, inputs: [{from: S_7, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 14.0]}
+  - {id: CN_7, kind: comparator, represents: kn_7, max: 1.25, inputs: [{from: S_7, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 15.0]}
+  - {id: Z_7, kind: summer, represents: z_7, max: 1.25, inputs: [{from: S_7, weight: 1.0}, {from: CP_7, weight: 3.0}, {from: CN_7, weight: 3.0}], position: [3.0, 14.0]}
+  - {id: A_8, kind: constant, represents: a_8, max: 1.25, value: 0.0, position: [0.0, 16.0]}
+  - {id: B_8, kind: constant, represents: b_8, max: 1.25, value: 0.0, position: [0.0, 17.0]}
+  - {id: S_8, kind: summer, represents: "-(a_8 + b_8 + k_7)", max: 3.75, inputs: [{from: A_8, weight: 1.0}, {from: B_8, weight: 1.0}, {from: CP_7, weight: 1.0}, {from: CN_7, weight: 1.0}], position: [1.0, 16.0]}
+  - {id: CP_8, kind: comparator, represents: kp_8, max: 1.25, inputs: [{from: S_8, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 16.0]}
+  - {id: CN_8, kind: comparator, represents: kn_8, max: 1.25, inputs: [{from: S_8, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 17.0]}
+  - {id: Z_8, kind: summer, represents: z_8, max: 1.25, inputs: [{from: S_8, weight: 1.0}, {from: CP_8, weight: 3.0}, {from: CN_8, weight: 3.0}], position: [3.0, 16.0]}
+  - {id: A_9, kind: constant, represents: a_9, max: 1.25, value: 0.0, position: [0.0, 18.0]}
+  - {id: B_9, kind: constant, represents: b_9, max: 1.25, value: 0.0, position: [0.0, 19.0]}
+  - {id: S_9, kind: summer, represents: "-(a_9 + b_9 + k_8)", max: 3.75, inputs: [{from: A_9, weight: 1.0}, {from: B_9, weight: 1.0}, {from: CP_8, weight: 1.0}, {from: CN_8, weight: 1.0}], position: [1.0, 18.0]}
+  - {id: CP_9, kind: comparator, represents: kp_9, max: 1.25, inputs: [{from: S_9, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 18.0]}
+  - {id: CN_9, kind: comparator, represents: kn_9, max: 1.25, inputs: [{from: S_9, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 19.0]}
+  - {id: Z_9, kind: summer, represents: z_9, max: 1.25, inputs: [{from: S_9, weight: 1.0}, {from: CP_9, weight: 3.0}, {from: CN_9, weight: 3.0}], position: [3.0, 18.0]}
+  - {id: A_10, kind: constant, represents: a_10, max: 1.25, value: 0.0, position: [0.0, 20.0]}
+  - {id: B_10, kind: constant, represents: b_10, max: 1.25, value: 0.0, position: [0.0, 21.0]}
+  - {id: S_10, kind: summer, represents: "-(a_10 + b_10 + k_9)", max: 3.75, inputs: [{from: A_10, weight: 1.0}, {from: B_10, weight: 1.0}, {from: CP_9, weight: 1.0}, {from: CN_9, weight: 1.0}], position: [1.0, 20.0]}
+  - {id: CP_10, kind: comparator, represents: kp_10, max: 1.25, inputs: [{from: S_10, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 20.0]}
+  - {id: CN_10, kind: comparator, represents: kn_10, max: 1.25, inputs: [{from: S_10, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 21.0]}
+  - {id: Z_10, kind: summer, represents: z_10, max: 1.25, inputs: [{from: S_10, weight: 1.0}, {from: CP_10, weight: 3.0}, {from: CN_10, weight: 3.0}], position: [3.0, 20.0]}
+  - {id: A_11, kind: constant, represents: a_11, max: 1.25, value: 0.0, position: [0.0, 22.0]}
+  - {id: B_11, kind: constant, represents: b_11, max: 1.25, value: 0.0, position: [0.0, 23.0]}
+  - {id: S_11, kind: summer, represents: "-(a_11 + b_11 + k_10)", max: 3.75, inputs: [{from: A_11, weight: 1.0}, {from: B_11, weight: 1.0}, {from: CP_10, weight: 1.0}, {from: CN_10, weight: 1.0}], position: [1.0, 22.0]}
+  - {id: CP_11, kind: comparator, represents: kp_11, max: 1.25, inputs: [{from: S_11, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 22.0]}
+  - {id: CN_11, kind: comparator, represents: kn_11, max: 1.25, inputs: [{from: S_11, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 23.0]}
+  - {id: Z_11, kind: summer, represents: z_11, max: 1.25, inputs: [{from: S_11, weight: 1.0}, {from: CP_11, weight: 3.0}, {from: CN_11, weight: 3.0}], position: [3.0, 22.0]}
+  - {id: A_12, kind: constant, represents: a_12, max: 1.25, value: 0.0, position: [0.0, 24.0]}
+  - {id: B_12, kind: constant, represents: b_12, max: 1.25, value: 0.0, position: [0.0, 25.0]}
+  - {id: S_12, kind: summer, represents: "-(a_12 + b_12 + k_11)", max: 3.75, inputs: [{from: A_12, weight: 1.0}, {from: B_12, weight: 1.0}, {from: CP_11, weight: 1.0}, {from: CN_11, weight: 1.0}], position: [1.0, 24.0]}
+  - {id: CP_12, kind: comparator, represents: kp_12, max: 1.25, inputs: [{from: S_12, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 24.0]}
+  - {id: CN_12, kind: comparator, represents: kn_12, max: 1.25, inputs: [{from: S_12, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 25.0]}
+  - {id: Z_12, kind: summer, represents: z_12, max: 1.25, inputs: [{from: S_12, weight: 1.0}, {from: CP_12, weight: 3.0}, {from: CN_12, weight: 3.0}], position: [3.0, 24.0]}
+  - {id: A_13, kind: constant, represents: a_13, max: 1.25, value: 0.0, position: [0.0, 26.0]}
+  - {id: B_13, kind: constant, represents: b_13, max: 1.25, value: 0.0, position: [0.0, 27.0]}
+  - {id: S_13, kind: summer, represents: "-(a_13 + b_13 + k_12)", max: 3.75, inputs: [{from: A_13, weight: 1.0}, {from: B_13, weight: 1.0}, {from: CP_12, weight: 1.0}, {from: CN_12, weight: 1.0}], position: [1.0, 26.0]}
+  - {id: CP_13, kind: comparator, represents: kp_13, max: 1.25, inputs: [{from: S_13, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 26.0]}
+  - {id: CN_13, kind: comparator, represents: kn_13, max: 1.25, inputs: [{from: S_13, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 27.0]}
+  - {id: Z_13, kind: summer, represents: z_13, max: 1.25, inputs: [{from: S_13, weight: 1.0}, {from: CP_13, weight: 3.0}, {from: CN_13, weight: 3.0}], position: [3.0, 26.0]}
+  - {id: A_14, kind: constant, represents: a_14, max: 1.25, value: 0.0, position: [0.0, 28.0]}
+  - {id: B_14, kind: constant, represents: b_14, max: 1.25, value: 0.0, position: [0.0, 29.0]}
+  - {id: S_14, kind: summer, represents: "-(a_14 + b_14 + k_13)", max: 3.75, inputs: [{from: A_14, weight: 1.0}, {from: B_14, weight: 1.0}, {from: CP_13, weight: 1.0}, {from: CN_13, weight: 1.0}], position: [1.0, 28.0]}
+  - {id: CP_14, kind: comparator, represents: kp_14, max: 1.25, inputs: [{from: S_14, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 28.0]}
+  - {id: CN_14, kind: comparator, represents: kn_14, max: 1.25, inputs: [{from: S_14, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 29.0]}
+  - {id: Z_14, kind: summer, represents: z_14, max: 1.25, inputs: [{from: S_14, weight: 1.0}, {from: CP_14, weight: 3.0}, {from: CN_14, weight: 3.0}], position: [3.0, 28.0]}
+  - {id: A_15, kind: constant, represents: a_15, max: 1.25, value: 0.0, position: [0.0, 30.0]}
+  - {id: B_15, kind: constant, represents: b_15, max: 1.25, value: 0.0, position: [0.0, 31.0]}
+  - {id: S_15, kind: summer, represents: "-(a_15 + b_15 + k_14)", max: 3.75, inputs: [{from: A_15, weight: 1.0}, {from: B_15, weight: 1.0}, {from: CP_14, weight: 1.0}, {from: CN_14, weight: 1.0}], position: [1.0, 30.0]}
+  - {id: CP_15, kind: comparator, represents: kp_15, max: 1.25, inputs: [{from: S_15, weight: -1.0}, {from: R_p1, weight: -1.5}], levels: {below: 0.0, above: 1.0}, position: [2.0, 30.0]}
+  - {id: CN_15, kind: comparator, represents: kn_15, max: 1.25, inputs: [{from: S_15, weight: -1.0}, {from: R_p1, weight: 1.5}], levels: {below: -1.0, above: 0.0}, position: [2.0, 31.0]}
+  - {id: Z_15, kind: summer, represents: z_15, max: 1.25, inputs: [{from: S_15, weight: 1.0}, {from: CP_15, weight: 3.0}, {from: CN_15, weight: 3.0}], position: [3.0, 30.0]}
+outputs:
+  - {name: z0, element: Z_0}
+  - {name: z1, element: Z_1}
+  - {name: z2, element: Z_2}
+  - {name: z3, element: Z_3}
+  - {name: z4, element: Z_4}
+  - {name: z5, element: Z_5}
+  - {name: z6, element: Z_6}
+  - {name: z7, element: Z_7}
+  - {name: z8, element: Z_8}
+  - {name: z9, element: Z_9}
+  - {name: z10, element: Z_10}
+  - {name: z11, element: Z_11}
+  - {name: z12, element: Z_12}
+  - {name: z13, element: Z_13}
+  - {name: z14, element: Z_14}
+  - {name: z15, element: Z_15}
+run: {t1: 1.0, h: 1.0}

@@ -1,0 +1,27 @@
+_notice: "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0"
+format: anasim-patch 1
+patch:
+  id: damped_driven_oscillator
+  version: 0.1.0
+  title: Damped driven oscillator
+  description: >-
+    The oscillator x'' + 2 zeta omega x' + omega^2 x = F cos(omega_d t). The drive cos(omega_d t) is generated on
+    the machine by a second loop of two integrators and an inverter (I_c, I_s, N_c), as analogue practice does.
+  model: {id: damped-driven-oscillator, version: 1.0.0}
+machine: {time_scale: auto}
+elements:
+  - {id: I_c, kind: integrator, represents: "cos(omega_d*t)", max: 1.25, ic: 1, inputs: [{from: I_s, weight: omega_d}], position: [0, 1]}
+  - {id: N_c, kind: inverter, represents: "-cos(omega_d*t)", inputs: [{from: I_c}], position: [1, 1]}
+  - {id: I_s, kind: integrator, represents: "sin(omega_d*t)", max: 1.25, ic: 0, inputs: [{from: N_c, weight: omega_d}], position: [2, 1]}
+  - id: I_v
+    kind: integrator
+    represents: v
+    max: 1.5
+    ic: v_0
+    inputs: [{from: I_v, weight: "2*zeta*omega"}, {from: I_x, weight: "omega^2"}, {from: N_c, weight: F}]
+    position: [0, 0]
+  - {id: N_v, kind: inverter, represents: -v, inputs: [{from: I_v}], position: [1, 0]}
+  - {id: I_x, kind: integrator, represents: x, max: 1.75, ic: x_0, inputs: [{from: N_v, weight: 1}], position: [2, 0]}
+outputs:
+  - {name: x, element: I_x}
+  - {name: v, element: I_v}

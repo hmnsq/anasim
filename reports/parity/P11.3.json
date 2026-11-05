@@ -1,0 +1,230 @@
+{
+ "_notice": "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0",
+ "node": "v22.23.4",
+ "playwright": "1.63.0",
+ "cases": {
+  "exponential-decay.ideal.problem.csv": {
+   "node_sha256": "d2f6b2e675c1f2ee09db37e343235695fa327c650e8ce4e360ad3f8316e68315",
+   "bytes": 44659
+  },
+  "exponential-decay.ideal.machine.csv": {
+   "node_sha256": "796d1fcc4dc9164cb0f788e1855ffae57a1d16ae1d5ee807d2717ca28d97c6d1",
+   "bytes": 44663
+  },
+  "exponential-decay.ideal.events.json": {
+   "node_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "bytes": 2
+  },
+  "harmonic-oscillator.ideal.problem.csv": {
+   "node_sha256": "f47baa9cf5b329eb4aa8ecc7d61c95e5b3792ac84bc3f1fbe58cf36f3725340e",
+   "bytes": 134723
+  },
+  "harmonic-oscillator.ideal.machine.csv": {
+   "node_sha256": "f0286dc050e13d5d60204c213b550121950d3f850a35cdf8dd1ed4819b790907",
+   "bytes": 179698
+  },
+  "harmonic-oscillator.ideal.events.json": {
+   "node_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "bytes": 2
+  },
+  "harmonic-oscillator-overload.ideal.problem.csv": {
+   "node_sha256": "6c361869844030f0aac17d590af34d473222c15cde6499545bde379cacceaa86",
+   "bytes": 134732
+  },
+  "harmonic-oscillator-overload.ideal.machine.csv": {
+   "node_sha256": "f8501624921caf1b0f405f8e07fbae44574fc0326c2209402154b848d08685ab",
+   "bytes": 179707
+  },
+  "harmonic-oscillator-overload.ideal.events.json": {
+   "node_sha256": "87e03f8a1d464e391bf247e5733c21327cb4bccb6c4cd1f7096cd64046e9444a",
+   "bytes": 4675
+  },
+  "damped-driven-oscillator.ideal.problem.csv": {
+   "node_sha256": "422d083e4730db3d9a5191b574ba1b4903554581e5f733b75fc8ba844339bb9e",
+   "bytes": 201907
+  },
+  "damped-driven-oscillator.ideal.machine.csv": {
+   "node_sha256": "125b4310ffdf359608a63fe929f38cb203743bdae266be6e8d47f01ac39312a8",
+   "bytes": 471829
+  },
+  "damped-driven-oscillator.ideal.events.json": {
+   "node_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "bytes": 2
+  },
+  "lorenz.ideal.problem.csv": {
+   "node_sha256": "bb15436c9d4a41aebaa89ecf31028a545b67e0c7936cd6e8d11b1ad3f2bf7eb8",
+   "bytes": 449768
+  },
+  "lorenz.ideal.machine.csv": {
+   "node_sha256": "c60378071fab9f8b4ddc83c8cf5ac8d9e8dcb3beb2dd4e74c6ed4058b4805174",
+   "bytes": 900180
+  },
+  "lorenz.ideal.events.json": {
+   "node_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "bytes": 2
+  },
+  "lorenz-overload.ideal.problem.csv": {
+   "node_sha256": "9859526e6d8d23bac49fe5317efe0a6fbf9e2877e3e25ee886af1cbdc26276ff",
+   "bytes": 449777
+  },
+  "lorenz-overload.ideal.machine.csv": {
+   "node_sha256": "6c96c8a80849e9a087fe630b4b4183f4c4b148316cf47cda786dc2a7ef64cb50",
+   "bytes": 900189
+  },
+  "lorenz-overload.ideal.events.json": {
+   "node_sha256": "b8687d8cec580a1b53d16b983cd0d223f74b0542d5343fdc711e089fc4205872",
+   "bytes": 182
+  },
+  "function-generation.ideal.problem.csv": {
+   "node_sha256": "1b214bedf3a013395310626cfe9f75aab2142ce65c726a5aa98854a23882fe3a",
+   "bytes": 177343
+  },
+  "function-generation.ideal.machine.csv": {
+   "node_sha256": "c43b744649846015a5c970f595dda70ae4313cc9b4d5c7dd20046c488dc90647",
+   "bytes": 289471
+  },
+  "function-generation.ideal.events.json": {
+   "node_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "bytes": 2
+  }
+ },
+ "browsers": {
+  "chromium": {
+   "ran": true,
+   "version": "153.0.8010.12",
+   "cases": {
+    "exponential-decay.ideal.problem.csv": {
+     "required": true,
+     "sha256": "d2f6b2e675c1f2ee09db37e343235695fa327c650e8ce4e360ad3f8316e68315",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "exponential-decay.ideal.machine.csv": {
+     "required": true,
+     "sha256": "796d1fcc4dc9164cb0f788e1855ffae57a1d16ae1d5ee807d2717ca28d97c6d1",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "exponential-decay.ideal.events.json": {
+     "required": true,
+     "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "harmonic-oscillator.ideal.problem.csv": {
+     "required": true,
+     "sha256": "f47baa9cf5b329eb4aa8ecc7d61c95e5b3792ac84bc3f1fbe58cf36f3725340e",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "harmonic-oscillator.ideal.machine.csv": {
+     "required": true,
+     "sha256": "f0286dc050e13d5d60204c213b550121950d3f850a35cdf8dd1ed4819b790907",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "harmonic-oscillator.ideal.events.json": {
+     "required": true,
+     "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "harmonic-oscillator-overload.ideal.problem.csv": {
+     "required": true,
+     "sha256": "6c361869844030f0aac17d590af34d473222c15cde6499545bde379cacceaa86",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "harmonic-oscillator-overload.ideal.machine.csv": {
+     "required": true,
+     "sha256": "f8501624921caf1b0f405f8e07fbae44574fc0326c2209402154b848d08685ab",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "harmonic-oscillator-overload.ideal.events.json": {
+     "required": true,
+     "sha256": "87e03f8a1d464e391bf247e5733c21327cb4bccb6c4cd1f7096cd64046e9444a",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "damped-driven-oscillator.ideal.problem.csv": {
+     "required": true,
+     "sha256": "422d083e4730db3d9a5191b574ba1b4903554581e5f733b75fc8ba844339bb9e",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "damped-driven-oscillator.ideal.machine.csv": {
+     "required": true,
+     "sha256": "125b4310ffdf359608a63fe929f38cb203743bdae266be6e8d47f01ac39312a8",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "damped-driven-oscillator.ideal.events.json": {
+     "required": true,
+     "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "lorenz.ideal.problem.csv": {
+     "required": true,
+     "sha256": "bb15436c9d4a41aebaa89ecf31028a545b67e0c7936cd6e8d11b1ad3f2bf7eb8",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "lorenz.ideal.machine.csv": {
+     "required": true,
+     "sha256": "c60378071fab9f8b4ddc83c8cf5ac8d9e8dcb3beb2dd4e74c6ed4058b4805174",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "lorenz.ideal.events.json": {
+     "required": true,
+     "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "lorenz-overload.ideal.problem.csv": {
+     "required": true,
+     "sha256": "9859526e6d8d23bac49fe5317efe0a6fbf9e2877e3e25ee886af1cbdc26276ff",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "lorenz-overload.ideal.machine.csv": {
+     "required": true,
+     "sha256": "6c96c8a80849e9a087fe630b4b4183f4c4b148316cf47cda786dc2a7ef64cb50",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "lorenz-overload.ideal.events.json": {
+     "required": true,
+     "sha256": "b8687d8cec580a1b53d16b983cd0d223f74b0542d5343fdc711e089fc4205872",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "function-generation.ideal.problem.csv": {
+     "required": true,
+     "sha256": "1b214bedf3a013395310626cfe9f75aab2142ce65c726a5aa98854a23882fe3a",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "function-generation.ideal.machine.csv": {
+     "required": true,
+     "sha256": "c43b744649846015a5c970f595dda70ae4313cc9b4d5c7dd20046c488dc90647",
+     "identical": true,
+     "max_relative_difference": 0
+    },
+    "function-generation.ideal.events.json": {
+     "required": true,
+     "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+     "identical": true,
+     "max_relative_difference": 0
+    }
+   },
+   "identical": "21/21",
+   "within_cross_engine_bound": "21/21",
+   "criterion": "byte-identical",
+   "passed": true
+  }
+ },
+ "passed": true
+}

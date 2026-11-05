@@ -1,0 +1,33 @@
+$ node tests/p11_3_ideal.test.mjs
+PASS gate refuses a perturbed trace exponential-decay: perturbed error 2.000e-4 > 1e-4
+PASS rk4 against analytic exponential-decay: max abs error over amplitude 1.924e-12 (bound 1e-4, h = 0.01, machine step 0.0000010000000000000002 s)
+PASS dopri54 against analytic exponential-decay: max relative error (floor 1e-9) 1.415e-11 (bound 1e-7 at rtol 1e-10); 200 steps accepted, 0 rejected
+PASS oracle vectors match the model exponential-decay: vector file model_sha256 ef943fe162d0...
+PASS analytic solution equals the core's vectors exponential-decay: max difference 1.11e-16
+PASS gate refuses a perturbed trace harmonic-oscillator: perturbed error 2.000e-4 > 1e-4
+PASS rk4 against analytic harmonic-oscillator: max abs error over amplitude 5.240e-8 (bound 1e-4, h = 0.01, machine step 0.00001 s)
+PASS dopri54 against analytic harmonic-oscillator: max relative error (floor 1e-9) 1.692e-9 (bound 1e-7 at rtol 1e-10); 1361 steps accepted, 15 rejected
+PASS oracle vectors match the model harmonic-oscillator: vector file model_sha256 f6b6bab2636a...
+PASS analytic solution equals the core's vectors harmonic-oscillator: max difference 2.22e-16
+PASS gate refuses a perturbed trace damped-driven-oscillator: perturbed error 2.000e-4 > 1e-4
+PASS rk4 against analytic damped-driven-oscillator: max abs error over amplitude 7.461e-10 (bound 1e-4, h = 0.01, machine step 0.00001 s)
+PASS dopri54 against analytic damped-driven-oscillator: max relative error (floor 1e-9) 1.057e-8 (bound 1e-7 at rtol 1e-10); 902 steps accepted, 20 rejected
+PASS oracle vectors match the model damped-driven-oscillator: vector file model_sha256 0d608ac59616...
+PASS analytic solution equals the core's vectors damped-driven-oscillator: max difference 2.43e-15
+PASS lorenz vectors are for this model
+PASS gate refuses a perturbed lorenz trace: perturbed 2.008e-6
+PASS lorenz against mpmath, t <= 5: max abs error 6.586e-8 at 101 points (bound 1e-6, h = 0.001)
+REPORT lorenz attractor statistics, t from 50 to 500 (T-36 bound 2 per cent NOT MET): x: mean 0.082 (ref 0.252, diff 2.15% of std, 0.47 standard errors), std 7.923 (ref 7.932, 0.11%); y: mean 0.081 (ref 0.255, diff 1.93% of std, 0.47 standard errors), std 9.012 (ref 8.992, 0.23%); z: mean 23.545 (ref 23.613, diff 0.80% of std, 1.19 standard errors), std 8.626 (ref 8.558, 0.80%)
+PASS function vectors are for this model
+PASS function f_sin against mpmath: max abs error over amplitude 2.549e-12 (bound 1e-4)
+PASS function f_exp against mpmath: max abs error over amplitude 3.220e-15 (bound 1e-4)
+PASS function f_square against mpmath: max abs error over amplitude 1.643e-14 (bound 1e-4)
+PASS function f_sqrt approximation bound recorded: class approximate: achieved max abs error 5.000e-3 (5.000e-3 of amplitude), above the 1e-4 default
+PASS function f_log approximation bound recorded: class approximate: achieved max abs error 4.590e-4 (6.622e-4 of amplitude), above the 1e-4 default
+PASS function f_tanh against mpmath: max abs error over amplitude 3.535e-11 (bound 1e-4)
+PASS function f_abs against mpmath: max abs error over amplitude 1.643e-14 (bound 1e-4)
+PASS gate refuses a planted carry threshold (CP_0 at 2.5): 25 of the first 300 vectors fail with the defect
+PASS balanced ternary adder equals bt_add16 on every valid vector: 4240 passed, 0 failed, 81 skipped (operand holds the invalid code 11, which no machine level represents), 0 overloaded; largest distance of a sum level from its trit 4.44e-16
+[P11.3_ideal] 28 passed, 0 failed; results reports/results/P11.3_ideal.json
+
+[exit 0]

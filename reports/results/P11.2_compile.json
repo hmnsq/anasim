@@ -1,0 +1,292 @@
+{
+ "test": "P11.2_compile",
+ "passed": 26,
+ "failed": 0,
+ "checks": [
+  {
+   "id": "gate refuses a prediction with a wrong bound (planted: I_v max 1.6 -> 2.2)",
+   "ok": true,
+   "summary": "I_v: 0 predicted onset(s), 13 simulated; N_v: 0 predicted onset(s), 13 simulated"
+  },
+  {
+   "id": "gate refuses a prediction with a wrong frequency (planted: omega 2 -> 2.1)",
+   "ok": true,
+   "summary": "I_v: 14 predicted onset(s), 13 simulated; N_v: 14 predicted onset(s), 13 simulated"
+  },
+  {
+   "id": "evaluation in dependency order: reversed element list gives an identical run (lorenz)",
+   "ok": true,
+   "summary": "51 rows x 7 elements compared"
+  },
+  {
+   "id": "factors recorded balanced_ternary_addition",
+   "ok": true,
+   "summary": "97 elements, T = 1"
+  },
+  {
+   "id": "factors recorded and undone damped_driven_oscillator",
+   "ok": true,
+   "summary": "T = 0.001 (smallest power of ten with fastest gain 1.7833333333333334/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 1783.333 s-1 <= 6283.2"
+  },
+  {
+   "id": "fastest gain inside the bandwidth limit damped_driven_oscillator",
+   "ok": true
+  },
+  {
+   "id": "predicted overloads equal simulated damped_driven_oscillator",
+   "ok": true,
+   "summary": "0 predicted, 0 simulated, largest onset difference 0.00e+0 of the horizon (bound 1e-2)"
+  },
+  {
+   "id": "factors recorded and undone exponential_decay",
+   "ok": true,
+   "summary": "T = 0.0001 (smallest power of ten with fastest gain 0.5/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 5000.000 s-1 <= 6283.2"
+  },
+  {
+   "id": "fastest gain inside the bandwidth limit exponential_decay",
+   "ok": true
+  },
+  {
+   "id": "predicted overloads equal simulated exponential_decay",
+   "ok": true,
+   "summary": "0 predicted, 0 simulated, largest onset difference 0.00e+0 of the horizon (bound 1e-2)"
+  },
+  {
+   "id": "factors recorded and undone function_generation",
+   "ok": true,
+   "summary": "T = 0.01 (smallest power of ten with fastest gain 7.2/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 720.000 s-1 <= 6283.2"
+  },
+  {
+   "id": "fastest gain inside the bandwidth limit function_generation",
+   "ok": true
+  },
+  {
+   "id": "predicted overloads equal simulated function_generation",
+   "ok": true,
+   "summary": "0 predicted, 0 simulated, largest onset difference 0.00e+0 of the horizon (bound 1e-2)"
+  },
+  {
+   "id": "factors recorded and undone harmonic_oscillator_overload",
+   "ok": true,
+   "summary": "T = 0.001 (smallest power of ten with fastest gain 3.125/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 3125.000 s-1 <= 6283.2"
+  },
+  {
+   "id": "fastest gain inside the bandwidth limit harmonic_oscillator_overload",
+   "ok": true
+  },
+  {
+   "id": "predicted overloads equal simulated harmonic_oscillator_overload",
+   "ok": true,
+   "summary": "26 predicted, 26 simulated, largest onset difference 1.08e-11 of the horizon (bound 1e-2)"
+  },
+  {
+   "id": "factors recorded and undone harmonic_oscillator",
+   "ok": true,
+   "summary": "T = 0.001 (smallest power of ten with fastest gain 2/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 2000.000 s-1 <= 6283.2"
+  },
+  {
+   "id": "fastest gain inside the bandwidth limit harmonic_oscillator",
+   "ok": true
+  },
+  {
+   "id": "predicted overloads equal simulated harmonic_oscillator",
+   "ok": true,
+   "summary": "0 predicted, 0 simulated, largest onset difference 0.00e+0 of the horizon (bound 1e-2)"
+  },
+  {
+   "id": "factors recorded and undone lorenz_overload",
+   "ok": true,
+   "summary": "T = 0.1 (smallest power of ten with fastest gain 63.857142857142854/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 638.571 s-1 <= 6283.2"
+  },
+  {
+   "id": "fastest gain inside the bandwidth limit lorenz_overload",
+   "ok": true
+  },
+  {
+   "id": "predicted overloads equal simulated lorenz_overload",
+   "ok": true,
+   "summary": "1 predicted, 1 simulated, largest onset difference 1.11e-17 of the horizon (bound 1e-2)"
+  },
+  {
+   "id": "factors recorded and undone lorenz",
+   "ok": true,
+   "summary": "T = 0.1 (smallest power of ten with fastest gain 63.857142857142854/T <= 2 pi GBW / margin = 6283.185307179586); fastest machine gain 638.571 s-1 <= 6283.2"
+  },
+  {
+   "id": "fastest gain inside the bandwidth limit lorenz",
+   "ok": true
+  },
+  {
+   "id": "predicted overloads equal simulated lorenz",
+   "ok": true,
+   "summary": "0 predicted, 0 simulated, largest onset difference 0.00e+0 of the horizon (bound 1e-2)"
+  },
+  {
+   "id": "at least two patches exercise overloads",
+   "ok": true,
+   "summary": "2 patch(es) overload"
+  }
+ ],
+ "overloads": {
+  "damped_driven_oscillator": {
+   "predicted": 0,
+   "simulated": 0,
+   "agree": true,
+   "max_difference_over_horizon": 0,
+   "onsets": []
+  },
+  "exponential_decay": {
+   "predicted": 0,
+   "simulated": 0,
+   "agree": true,
+   "max_difference_over_horizon": 0,
+   "onsets": []
+  },
+  "function_generation": {
+   "predicted": 0,
+   "simulated": 0,
+   "agree": true,
+   "max_difference_over_horizon": 0,
+   "onsets": []
+  },
+  "harmonic_oscillator_overload": {
+   "predicted": 26,
+   "simulated": 26,
+   "agree": true,
+   "max_difference_over_horizon": 1.0756728840988217e-11,
+   "onsets": [
+    {
+     "element": "I_v",
+     "t": 0.46364760962776924
+    },
+    {
+     "element": "N_v",
+     "t": 0.46364760962776924
+    },
+    {
+     "element": "I_v",
+     "t": 2.034443938539153
+    },
+    {
+     "element": "N_v",
+     "t": 2.034443938539153
+    },
+    {
+     "element": "I_v",
+     "t": 3.605240267451891
+    },
+    {
+     "element": "N_v",
+     "t": 3.605240267451891
+    },
+    {
+     "element": "I_v",
+     "t": 5.17603659636743
+    },
+    {
+     "element": "N_v",
+     "t": 5.17603659636743
+    },
+    {
+     "element": "I_v",
+     "t": 6.74683292528751
+    },
+    {
+     "element": "N_v",
+     "t": 6.74683292528751
+    },
+    {
+     "element": "I_v",
+     "t": 8.31762925420974
+    },
+    {
+     "element": "N_v",
+     "t": 8.31762925420974
+    },
+    {
+     "element": "I_v",
+     "t": 9.888425583130172
+    },
+    {
+     "element": "N_v",
+     "t": 9.888425583130172
+    },
+    {
+     "element": "I_v",
+     "t": 11.459221912051099
+    },
+    {
+     "element": "N_v",
+     "t": 11.459221912051099
+    },
+    {
+     "element": "I_v",
+     "t": 13.030018240974705
+    },
+    {
+     "element": "N_v",
+     "t": 13.030018240974705
+    },
+    {
+     "element": "I_v",
+     "t": 14.600814569897018
+    },
+    {
+     "element": "N_v",
+     "t": 14.600814569897018
+    },
+    {
+     "element": "I_v",
+     "t": 16.17161089881411
+    },
+    {
+     "element": "N_v",
+     "t": 16.17161089881411
+    },
+    {
+     "element": "I_v",
+     "t": 17.742407227727796
+    },
+    {
+     "element": "N_v",
+     "t": 17.742407227727796
+    },
+    {
+     "element": "I_v",
+     "t": 19.313203556639582
+    },
+    {
+     "element": "N_v",
+     "t": 19.313203556639582
+    }
+   ]
+  },
+  "harmonic_oscillator": {
+   "predicted": 0,
+   "simulated": 0,
+   "agree": true,
+   "max_difference_over_horizon": 0,
+   "onsets": []
+  },
+  "lorenz_overload": {
+   "predicted": 1,
+   "simulated": 1,
+   "agree": true,
+   "max_difference_over_horizon": 1.1102230246251566e-17,
+   "onsets": [
+    {
+     "element": "I_z",
+     "t": 0.33631617473591807
+    }
+   ]
+  },
+  "lorenz": {
+   "predicted": 0,
+   "simulated": 0,
+   "agree": true,
+   "max_difference_over_horizon": 0,
+   "onsets": []
+  }
+ },
+ "seconds": 1.164
+}

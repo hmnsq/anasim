@@ -1,0 +1,173 @@
+{
+ "test": "P11.1_patches",
+ "passed": 15,
+ "failed": 0,
+ "checks": [
+  {
+   "id": "valid docs/programs/balanced-ternary-addition.patch.yaml",
+   "ok": true,
+   "summary": "97 elements; graph check 0 error(s), schema 0 error(s)",
+   "graph_errors": [],
+   "schema_errors": []
+  },
+  {
+   "id": "valid docs/programs/damped-driven-oscillator.patch.yaml",
+   "ok": true,
+   "summary": "6 elements; graph check 0 error(s), schema 0 error(s)",
+   "graph_errors": [],
+   "schema_errors": []
+  },
+  {
+   "id": "valid docs/programs/exponential-decay.patch.yaml",
+   "ok": true,
+   "summary": "1 elements; graph check 0 error(s), schema 0 error(s)",
+   "graph_errors": [],
+   "schema_errors": []
+  },
+  {
+   "id": "valid docs/programs/function-generation.patch.yaml",
+   "ok": true,
+   "summary": "12 elements; graph check 0 error(s), schema 0 error(s)",
+   "graph_errors": [],
+   "schema_errors": []
+  },
+  {
+   "id": "valid docs/programs/harmonic-oscillator-overload.patch.yaml",
+   "ok": true,
+   "summary": "3 elements; graph check 0 error(s), schema 0 error(s)",
+   "graph_errors": [],
+   "schema_errors": []
+  },
+  {
+   "id": "valid docs/programs/harmonic-oscillator.patch.yaml",
+   "ok": true,
+   "summary": "3 elements; graph check 0 error(s), schema 0 error(s)",
+   "graph_errors": [],
+   "schema_errors": []
+  },
+  {
+   "id": "valid docs/programs/lorenz-overload.patch.yaml",
+   "ok": true,
+   "summary": "7 elements; graph check 0 error(s), schema 0 error(s)",
+   "graph_errors": [],
+   "schema_errors": []
+  },
+  {
+   "id": "valid docs/programs/lorenz.patch.yaml",
+   "ok": true,
+   "summary": "7 elements; graph check 0 error(s), schema 0 error(s)",
+   "graph_errors": [],
+   "schema_errors": []
+  },
+  {
+   "id": "a patch for every CMS-03 model",
+   "ok": true,
+   "summary": "6 models; missing: none",
+   "models": [
+    "balanced-ternary-addition",
+    "damped-driven-oscillator",
+    "exponential-decay",
+    "function-generation",
+    "harmonic-oscillator",
+    "lorenz"
+   ]
+  },
+  {
+   "id": "refused tests/defects/algebraic-loop.patch.yaml",
+   "ok": true,
+   "summary": "planted ALGEBRAIC_LOOP; refused with ALGEBRAIC_LOOP at elements[1]: algebraic loop without an integrator: S_a -> S_b -> S_a; schema: accepts (graph check needed)"
+  },
+  {
+   "id": "refused tests/defects/algebraic-self-loop.patch.yaml",
+   "ok": true,
+   "summary": "planted ALGEBRAIC_LOOP; refused with ALGEBRAIC_LOOP at elements[1]: algebraic loop without an integrator: N_v -> N_v; schema: accepts (graph check needed)"
+  },
+  {
+   "id": "refused tests/defects/dangling-input.patch.yaml",
+   "ok": true,
+   "summary": "planted UNKNOWN_ELEMENT; refused with UNKNOWN_ELEMENT at elements[0].inputs[0].from: no element named 'I_q'; schema: accepts (graph check needed)"
+  },
+  {
+   "id": "refused tests/defects/unconnected-empty.patch.yaml",
+   "ok": true,
+   "summary": "planted UNCONNECTED; refused with UNCONNECTED at elements[1].inputs: a inverter takes 1 input(s), found 0; schema: elements/1/inputs: [] should be non-empty"
+  },
+  {
+   "id": "refused tests/defects/unconnected-input.patch.yaml",
+   "ok": true,
+   "summary": "planted UNCONNECTED; refused with UNCONNECTED at elements[0].inputs[0]: input is not connected to any element; schema: elements/0/inputs/0: 'from' is a required property"
+  },
+  {
+   "id": "both required defect kinds planted",
+   "ok": true,
+   "summary": "ALGEBRAIC_LOOP, UNKNOWN_ELEMENT, UNCONNECTED"
+  }
+ ],
+ "planted": {
+  "tests/defects/algebraic-loop.patch.yaml": {
+   "planted": "ALGEBRAIC_LOOP",
+   "refused_by_graph_check": [
+    {
+     "code": "ALGEBRAIC_LOOP",
+     "path": "elements[1]",
+     "message": "algebraic loop without an integrator: S_a -> S_b -> S_a"
+    }
+   ],
+   "refused_by_schema": []
+  },
+  "tests/defects/algebraic-self-loop.patch.yaml": {
+   "planted": "ALGEBRAIC_LOOP",
+   "refused_by_graph_check": [
+    {
+     "code": "ALGEBRAIC_LOOP",
+     "path": "elements[1]",
+     "message": "algebraic loop without an integrator: N_v -> N_v"
+    }
+   ],
+   "refused_by_schema": []
+  },
+  "tests/defects/dangling-input.patch.yaml": {
+   "planted": "UNKNOWN_ELEMENT",
+   "refused_by_graph_check": [
+    {
+     "code": "UNKNOWN_ELEMENT",
+     "path": "elements[0].inputs[0].from",
+     "message": "no element named 'I_q'"
+    }
+   ],
+   "refused_by_schema": []
+  },
+  "tests/defects/unconnected-empty.patch.yaml": {
+   "planted": "UNCONNECTED",
+   "refused_by_graph_check": [
+    {
+     "code": "UNCONNECTED",
+     "path": "elements[1].inputs",
+     "message": "a inverter takes 1 input(s), found 0"
+    }
+   ],
+   "refused_by_schema": [
+    "elements/1/inputs: [] should be non-empty"
+   ]
+  },
+  "tests/defects/unconnected-input.patch.yaml": {
+   "planted": "UNCONNECTED",
+   "refused_by_graph_check": [
+    {
+     "code": "UNCONNECTED",
+     "path": "elements[0].inputs[0]",
+     "message": "input is not connected to any element"
+    }
+   ],
+   "refused_by_schema": [
+    "elements/0/inputs/0: 'from' is a required property"
+   ]
+  }
+ },
+ "defect_kinds": [
+  "ALGEBRAIC_LOOP",
+  "UNKNOWN_ELEMENT",
+  "UNCONNECTED"
+ ],
+ "seconds": 0.883
+}

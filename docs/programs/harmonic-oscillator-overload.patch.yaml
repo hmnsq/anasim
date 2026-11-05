@@ -1,0 +1,18 @@
+_notice: "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0"
+format: anasim-patch 1
+patch:
+  id: harmonic_oscillator_overload
+  version: 0.1.0
+  title: Harmonic oscillator, velocity under-scaled
+  description: >-
+    The harmonic oscillator patch with the velocity bound set to 1.6 although |v| reaches 2, so I_v and N_v
+    overload twice per period. The overloads the compiler predicts must equal the ones the simulator meets (D9, T-51).
+  model: {id: harmonic-oscillator, version: 1.0.0}
+machine: {time_scale: auto}
+elements:
+  - {id: I_v, kind: integrator, represents: v, max: 1.6, ic: v_0, inputs: [{from: I_x, weight: "omega^2"}], position: [0, 0]}
+  - {id: N_v, kind: inverter, represents: -v, inputs: [{from: I_v}], position: [1, 0]}
+  - {id: I_x, kind: integrator, represents: x, max: 1.25, ic: x_0, inputs: [{from: N_v, weight: 1}], position: [2, 0]}
+outputs:
+  - {name: x, element: I_x}
+  - {name: v, element: I_v}

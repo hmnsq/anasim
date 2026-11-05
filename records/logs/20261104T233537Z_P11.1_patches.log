@@ -1,0 +1,19 @@
+$ node tests/p11_1_patches.test.mjs
+PASS valid docs/programs/balanced-ternary-addition.patch.yaml: 97 elements; graph check 0 error(s), schema 0 error(s)
+PASS valid docs/programs/damped-driven-oscillator.patch.yaml: 6 elements; graph check 0 error(s), schema 0 error(s)
+PASS valid docs/programs/exponential-decay.patch.yaml: 1 elements; graph check 0 error(s), schema 0 error(s)
+PASS valid docs/programs/function-generation.patch.yaml: 12 elements; graph check 0 error(s), schema 0 error(s)
+PASS valid docs/programs/harmonic-oscillator-overload.patch.yaml: 3 elements; graph check 0 error(s), schema 0 error(s)
+PASS valid docs/programs/harmonic-oscillator.patch.yaml: 3 elements; graph check 0 error(s), schema 0 error(s)
+PASS valid docs/programs/lorenz-overload.patch.yaml: 7 elements; graph check 0 error(s), schema 0 error(s)
+PASS valid docs/programs/lorenz.patch.yaml: 7 elements; graph check 0 error(s), schema 0 error(s)
+PASS a patch for every CMS-03 model: 6 models; missing: none
+PASS refused tests/defects/algebraic-loop.patch.yaml: planted ALGEBRAIC_LOOP; refused with ALGEBRAIC_LOOP at elements[1]: algebraic loop without an integrator: S_a -> S_b -> S_a; schema: accepts (graph check needed)
+PASS refused tests/defects/algebraic-self-loop.patch.yaml: planted ALGEBRAIC_LOOP; refused with ALGEBRAIC_LOOP at elements[1]: algebraic loop without an integrator: N_v -> N_v; schema: accepts (graph check needed)
+PASS refused tests/defects/dangling-input.patch.yaml: planted UNKNOWN_ELEMENT; refused with UNKNOWN_ELEMENT at elements[0].inputs[0].from: no element named 'I_q'; schema: accepts (graph check needed)
+PASS refused tests/defects/unconnected-empty.patch.yaml: planted UNCONNECTED; refused with UNCONNECTED at elements[1].inputs: a inverter takes 1 input(s), found 0; schema: elements/1/inputs: [] should be non-empty
+PASS refused tests/defects/unconnected-input.patch.yaml: planted UNCONNECTED; refused with UNCONNECTED at elements[0].inputs[0]: input is not connected to any element; schema: elements/0/inputs/0: 'from' is a required property
+PASS both required defect kinds planted: ALGEBRAIC_LOOP, UNKNOWN_ELEMENT, UNCONNECTED
+[P11.1_patches] 15 passed, 0 failed; results reports/results/P11.1_patches.json
+
+[exit 0]

@@ -1,0 +1,29 @@
+$ node tools/expect_fail.mjs -- node tools/parity.mjs --plant --out .cache/tmp/parity_plant.json
+planted: one digit changed in the Node.js text of exponential-decay.ideal.problem.csv
+node v22.23.4: 21 cases
+chromium 153.0.8010.12: required cases 20/21 byte-identical, 21/21 within 1e-12: FAIL
+  required  exponential-decay.ideal.problem.csv: differs, max relative 0
+  required  exponential-decay.ideal.machine.csv: byte-identical
+  required  exponential-decay.ideal.events.json: byte-identical
+  required  harmonic-oscillator.ideal.problem.csv: byte-identical
+  required  harmonic-oscillator.ideal.machine.csv: byte-identical
+  required  harmonic-oscillator.ideal.events.json: byte-identical
+  required  harmonic-oscillator-overload.ideal.problem.csv: byte-identical
+  required  harmonic-oscillator-overload.ideal.machine.csv: byte-identical
+  required  harmonic-oscillator-overload.ideal.events.json: byte-identical
+  required  damped-driven-oscillator.ideal.problem.csv: byte-identical
+  required  damped-driven-oscillator.ideal.machine.csv: byte-identical
+  required  damped-driven-oscillator.ideal.events.json: byte-identical
+  required  lorenz.ideal.problem.csv: byte-identical
+  required  lorenz.ideal.machine.csv: byte-identical
+  required  lorenz.ideal.events.json: byte-identical
+  required  lorenz-overload.ideal.problem.csv: byte-identical
+  required  lorenz-overload.ideal.machine.csv: byte-identical
+  required  lorenz-overload.ideal.events.json: byte-identical
+  required  function-generation.ideal.problem.csv: byte-identical
+  required  function-generation.ideal.machine.csv: byte-identical
+  required  function-generation.ideal.events.json: byte-identical
+parity: FAIL; report .cache/tmp/parity_plant.json
+expect_fail: the gate exited 1; the planted defect was refused
+
+[exit 0]

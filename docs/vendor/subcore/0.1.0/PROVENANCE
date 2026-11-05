@@ -1,0 +1,52 @@
+© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. (this PROVENANCE file only)
+SPDX-License-Identifier: CC0-1.0 (this PROVENANCE file only; the vendored files keep their own notices)
+
+library: subcore (hmnsq/subcore, the shared web core)
+version: 0.1.0
+licence: GPL-3.0-or-later (LICENCE is a byte copy of the core's LICENSE); js-yaml under vendor/ is MIT
+upstream: /home/user/build/subcore (local repository of hmnsq/subcore in this build)
+commit: e3194ab1b3f55f5bbdae391c9c73e45b7c7395d9
+tree: d7465decb6356dbb8dc5bdb2c46579387f7f0bda
+generator: tools/vendor_subcore.mjs
+rule: never edited here; re-vendored when the core changes
+untracked: 0 file(s) copied from the core's working tree because they are not committed at this commit
+
+sha256 of every vendored file (path relative to this folder) and its origin (commit or untracked):
+3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986  LICENCE  commit
+e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67  VERSION  commit
+8e64d36baf856d012922a8b90fc826aeff2963ad5ec2f6bc45fd093f3d394092  API.md  commit
+c4988b823278f12ccf3125f45ddc843453fe64dd473f58f5a85473534ddf5cbf  src/cli.js  commit
+9fad1ccc10ffdf974a88b85d10c083483cb2bec5c055c40b947f56a31ccd801a  src/errors.js  commit
+49b188ff1856a2ffff3899b72763da02119943b560d91907f2e1520470ec7fc3  src/events.js  commit
+ba60410cccbb45a546d1bbbedbaf2dd8bd47c10272c11711f0dc3343d6c46818  src/export.js  commit
+c87788e1d639944701e516d6181009a9d7d2f4b22292d9e4b317e0fdeafa02ec  src/expr.js  commit
+97285f9c92397ded534a897454e41af8761f384c3391d596d4dc5cad3853b27d  src/hash.js  commit
+7f9c0dc71d7037ca624c5faf9189d3c48d15cf112d74b94beb1ef02abe52912f  src/prng.js  commit
+50c7f7e0536e82cd8cd9b981ac45cff5eb3c1cd045ef975dd5b88765c762b7d9  src/solve.js  commit
+77480a2cdf07b18468a5effbc69043eeb8ec3d94b6d9d40068f76aea4ed5d3f0  src/spec.js  commit
+8ae30c4e647976553b8f40cc483a65f21d999411e46071752a97dfed97066601  src/trace.js  commit
+a6630d7e879da61c1d90b114e5afa3317b9f87dbc6838f2fbdba052c0b414a6d  src/units.js  commit
+73a747afd719494b90b1560178702eab5a3dffa0b87e835283d072a7b66ab450  src/vectors.js  commit
+a07bc24468b9654ce76a547d47a2db282d07733b715db4c73a98bd63961f9550  vendor/js-yaml/5.5.0/LICENCE  commit
+aaa223241f2e918deab12e14a1b3a16e8a463cb140d3f97736881f392da9d7a1  vendor/js-yaml/5.5.0/PROVENANCE  commit
+213470960d9c2ff1d01f9164e5017749bfc383d8a6ebb8683f35c76e8c6d052b  vendor/js-yaml/5.5.0/dist/js-yaml.mjs  commit
+3ad7fe3eba5cf97410524a34ae9638f9c711cf0f25b3239c2ff2b2a604ecea1d  vendor/js-yaml/5.5.0/package.json  commit
+ef4d8c3e18cb193ed2946bd8138c2bf48ab6ee867268afae85a049352f255858  spec/models/balanced-ternary-addition.yaml  commit
+e2d043765aef9cb3bc732583882951fc5ba157e357b304606fc5db7730674553  spec/models/damped-driven-oscillator.yaml  commit
+7041ef69c99e22564fa6f307104651f0ed81c9bc664588ab16a098f27556a7b9  spec/models/exponential-decay.yaml  commit
+1624692a2a0ed7ffd4c3ab1ac43c4265007a458d49a2aff75c07bf1400acc649  spec/models/function-generation.yaml  commit
+3c1578792bf9372866dbe15d605b8ee0f982d1887444f89c42a2f3f5081dd71e  spec/models/harmonic-oscillator.yaml  commit
+d602c2b35b2bb7ca7c4b63bd037c4c9e440d829d9f0dc3d5eee7558ee0b1930d  spec/models/lorenz.yaml  commit
+461cc64080d02b5b20a76ffb2b9720b26158cecb95fb5b148f141275f7891496  spec/grammar/expr.ebnf  commit
+c3b521c473c1600b3912c41b77d3920e1d5620fc416eafd6326a03c8c830a58b  spec/substrates/analogue-electronic.yaml  commit
+eb567c9bf060cc01e44632dac178933a762670763d2254258434a1a16437f514  spec/schema/model.schema.json  commit
+adf35aae4877e8a4bec0f259f36dfaa45e6d5e392f9c1a9b3d2cda5291f50c8e  spec/schema/realisation.schema.json  commit
+233be76e7e0120253b60818b7c051b2271c01e0e144272376292392d47eb85f8  spec/schema/substrate.schema.json  commit
+bba698daaed7f266bf8e7bc242989ce9e1e21fd4d3e87c04baf1e29f136c2781  vectors/damped-driven-oscillator/damped-driven-oscillator.analytic.vec  commit
+547efa02f62acd892b37ff2fa7ada88956b82450b635d87417b3cf309c8e0e9b  vectors/exponential-decay/exponential-decay.analytic.vec  commit
+d8a4747efe3d31e682e5fe6e788180233a5e1db15d642a02b453474db5f47e24  vectors/function-generation/function-generation.vec  commit
+576ea56830f2910eea9af5b026e1792e065dc88179fb4f2bf86caf4f2b0aeba1  vectors/harmonic-oscillator/harmonic-oscillator.analytic.vec  commit
+1dbd4e6e8acffac9cc8545a761949951e8c586ed40d378bed12ae38ef6a73190  vectors/lorenz/lorenz.stats.json  commit
+2e0373b99ea0522c266cdc4155bbdc0c36a6bc6523d668153774a0880fd1eb36  vectors/lorenz/lorenz.t5.vec  commit
+fde93d4636920c6c40d4fa0fe116e64d4cf3ac69511d3b99b8c44fc446b0bfc9  vectors/prng/splitmix64.vec  commit
+f0acb632ddc50b1922293520c27278642957acf0ac1ad9181c6a47e472d91ff2  vectors/prng/xoshiro128starstar.vec  commit

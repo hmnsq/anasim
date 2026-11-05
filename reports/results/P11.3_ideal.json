@@ -1,0 +1,293 @@
+{
+ "test": "P11.3_ideal",
+ "passed": 28,
+ "failed": 0,
+ "checks": [
+  {
+   "id": "gate refuses a perturbed trace exponential-decay",
+   "ok": true,
+   "summary": "perturbed error 2.000e-4 > 1e-4"
+  },
+  {
+   "id": "rk4 against analytic exponential-decay",
+   "ok": true,
+   "summary": "max abs error over amplitude 1.924e-12 (bound 1e-4, h = 0.01, machine step 0.0000010000000000000002 s)"
+  },
+  {
+   "id": "dopri54 against analytic exponential-decay",
+   "ok": true,
+   "summary": "max relative error (floor 1e-9) 1.415e-11 (bound 1e-7 at rtol 1e-10); 200 steps accepted, 0 rejected"
+  },
+  {
+   "id": "oracle vectors match the model exponential-decay",
+   "ok": true,
+   "summary": "vector file model_sha256 ef943fe162d0..."
+  },
+  {
+   "id": "analytic solution equals the core's vectors exponential-decay",
+   "ok": true,
+   "summary": "max difference 1.11e-16"
+  },
+  {
+   "id": "gate refuses a perturbed trace harmonic-oscillator",
+   "ok": true,
+   "summary": "perturbed error 2.000e-4 > 1e-4"
+  },
+  {
+   "id": "rk4 against analytic harmonic-oscillator",
+   "ok": true,
+   "summary": "max abs error over amplitude 5.240e-8 (bound 1e-4, h = 0.01, machine step 0.00001 s)"
+  },
+  {
+   "id": "dopri54 against analytic harmonic-oscillator",
+   "ok": true,
+   "summary": "max relative error (floor 1e-9) 1.692e-9 (bound 1e-7 at rtol 1e-10); 1361 steps accepted, 15 rejected"
+  },
+  {
+   "id": "oracle vectors match the model harmonic-oscillator",
+   "ok": true,
+   "summary": "vector file model_sha256 f6b6bab2636a..."
+  },
+  {
+   "id": "analytic solution equals the core's vectors harmonic-oscillator",
+   "ok": true,
+   "summary": "max difference 2.22e-16"
+  },
+  {
+   "id": "gate refuses a perturbed trace damped-driven-oscillator",
+   "ok": true,
+   "summary": "perturbed error 2.000e-4 > 1e-4"
+  },
+  {
+   "id": "rk4 against analytic damped-driven-oscillator",
+   "ok": true,
+   "summary": "max abs error over amplitude 7.461e-10 (bound 1e-4, h = 0.01, machine step 0.00001 s)"
+  },
+  {
+   "id": "dopri54 against analytic damped-driven-oscillator",
+   "ok": true,
+   "summary": "max relative error (floor 1e-9) 1.057e-8 (bound 1e-7 at rtol 1e-10); 902 steps accepted, 20 rejected"
+  },
+  {
+   "id": "oracle vectors match the model damped-driven-oscillator",
+   "ok": true,
+   "summary": "vector file model_sha256 0d608ac59616..."
+  },
+  {
+   "id": "analytic solution equals the core's vectors damped-driven-oscillator",
+   "ok": true,
+   "summary": "max difference 2.43e-15"
+  },
+  {
+   "id": "lorenz vectors are for this model",
+   "ok": true
+  },
+  {
+   "id": "gate refuses a perturbed lorenz trace",
+   "ok": true,
+   "summary": "perturbed 2.008e-6"
+  },
+  {
+   "id": "lorenz against mpmath, t <= 5",
+   "ok": true,
+   "summary": "max abs error 6.586e-8 at 101 points (bound 1e-6, h = 0.001)"
+  },
+  {
+   "id": "function vectors are for this model",
+   "ok": true
+  },
+  {
+   "id": "function f_sin against mpmath",
+   "ok": true,
+   "summary": "max abs error over amplitude 2.549e-12 (bound 1e-4)"
+  },
+  {
+   "id": "function f_exp against mpmath",
+   "ok": true,
+   "summary": "max abs error over amplitude 3.220e-15 (bound 1e-4)"
+  },
+  {
+   "id": "function f_square against mpmath",
+   "ok": true,
+   "summary": "max abs error over amplitude 1.643e-14 (bound 1e-4)"
+  },
+  {
+   "id": "function f_sqrt approximation bound recorded",
+   "ok": true,
+   "summary": "class approximate: achieved max abs error 5.000e-3 (5.000e-3 of amplitude), above the 1e-4 default"
+  },
+  {
+   "id": "function f_log approximation bound recorded",
+   "ok": true,
+   "summary": "class approximate: achieved max abs error 4.590e-4 (6.622e-4 of amplitude), above the 1e-4 default"
+  },
+  {
+   "id": "function f_tanh against mpmath",
+   "ok": true,
+   "summary": "max abs error over amplitude 3.535e-11 (bound 1e-4)"
+  },
+  {
+   "id": "function f_abs against mpmath",
+   "ok": true,
+   "summary": "max abs error over amplitude 1.643e-14 (bound 1e-4)"
+  },
+  {
+   "id": "gate refuses a planted carry threshold (CP_0 at 2.5)",
+   "ok": true,
+   "summary": "25 of the first 300 vectors fail with the defect"
+  },
+  {
+   "id": "balanced ternary adder equals bt_add16 on every valid vector",
+   "ok": true,
+   "summary": "4240 passed, 0 failed, 81 skipped (operand holds the invalid code 11, which no machine level represents), 0 overloaded; largest distance of a sum level from its trit 4.44e-16",
+   "failures": []
+  }
+ ],
+ "lorenz_statistics": {
+  "bound_met": false,
+  "note": "T-36 (P9.6) measured on the patch; reported, not gating T-52",
+  "stats": {
+   "x": {
+    "mean": 0.08163958860711537,
+    "std": 7.92313851214999,
+    "ref": {
+     "mean": 0.25243150604201475,
+     "std": 7.932174910018366
+    },
+    "mean_diff_over_std": 0.021531536983531285,
+    "std_rel_diff": 0.0011392080949908841,
+    "mean_standard_error_batch_means": 0.3648933693724726,
+    "mean_diff_over_standard_error": 0.46805979984952795
+   },
+   "y": {
+    "mean": 0.08137109921773468,
+    "std": 9.01230004503403,
+    "ref": {
+     "mean": 0.2546113624135552,
+     "std": 8.991942170417937
+    },
+    "mean_diff_over_std": 0.019266167409945485,
+    "std_rel_diff": 0.002264013071955284,
+    "mean_standard_error_batch_means": 0.3649612741072704,
+    "mean_diff_over_standard_error": 0.4746812209585318
+   },
+   "z": {
+    "mean": 23.544685472581584,
+    "std": 8.626495550172068,
+    "ref": {
+     "mean": 23.613225819547246,
+     "std": 8.558367170051062
+    },
+    "mean_diff_over_std": 0.008008577524636991,
+    "std_rel_diff": 0.00796044137477686,
+    "mean_standard_error_batch_means": 0.05740421892756502,
+    "mean_diff_over_standard_error": 1.1939949405486907
+   }
+  }
+ },
+ "results": {
+  "exponential-decay": {
+   "rk4_err_over_amplitude": 1.9239054793729338e-12,
+   "dopri54_max_rel": 1.4153117211788177e-11,
+   "h": 0.01,
+   "T": 0.0001
+  },
+  "harmonic-oscillator": {
+   "rk4_err_over_amplitude": 5.239717450200576e-8,
+   "dopri54_max_rel": 1.6917599324462494e-9,
+   "h": 0.01,
+   "T": 0.001
+  },
+  "damped-driven-oscillator": {
+   "rk4_err_over_amplitude": 7.46129812163841e-10,
+   "dopri54_max_rel": 1.0568499878005292e-8,
+   "h": 0.01,
+   "T": 0.001
+  },
+  "lorenz": {
+   "max_abs_t5": 6.586202760949789e-8,
+   "stats": {
+    "x": {
+     "mean": 0.08163958860711537,
+     "std": 7.92313851214999,
+     "ref": {
+      "mean": 0.25243150604201475,
+      "std": 7.932174910018366
+     },
+     "mean_diff_over_std": 0.021531536983531285,
+     "std_rel_diff": 0.0011392080949908841,
+     "mean_standard_error_batch_means": 0.3648933693724726,
+     "mean_diff_over_standard_error": 0.46805979984952795
+    },
+    "y": {
+     "mean": 0.08137109921773468,
+     "std": 9.01230004503403,
+     "ref": {
+      "mean": 0.2546113624135552,
+      "std": 8.991942170417937
+     },
+     "mean_diff_over_std": 0.019266167409945485,
+     "std_rel_diff": 0.002264013071955284,
+     "mean_standard_error_batch_means": 0.3649612741072704,
+     "mean_diff_over_standard_error": 0.4746812209585318
+    },
+    "z": {
+     "mean": 23.544685472581584,
+     "std": 8.626495550172068,
+     "ref": {
+      "mean": 23.613225819547246,
+      "std": 8.558367170051062
+     },
+     "mean_diff_over_std": 0.008008577524636991,
+     "std_rel_diff": 0.00796044137477686,
+     "mean_standard_error_batch_means": 0.05740421892756502,
+     "mean_diff_over_standard_error": 1.1939949405486907
+    }
+   }
+  },
+  "function-generation": {
+   "f_sin": {
+    "max_abs": 2.5490531411669172e-12,
+    "over_amplitude": 2.5490531411669172e-12,
+    "realisation": "computing elements"
+   },
+   "f_exp": {
+    "max_abs": 3.219646771412954e-15,
+    "over_amplitude": 3.219646771412954e-15,
+    "realisation": "computing elements"
+   },
+   "f_square": {
+    "max_abs": 1.6431300764452317e-14,
+    "over_amplitude": 1.6431300764452317e-14,
+    "realisation": "computing elements"
+   },
+   "f_sqrt": {
+    "max_abs": 0.0049999999999999906,
+    "over_amplitude": 0.0049999999999999906,
+    "realisation": "function generator, 17 breakpoints"
+   },
+   "f_log": {
+    "max_abs": 0.00045898376965566867,
+    "over_amplitude": 0.0006621736083307555,
+    "realisation": "function generator, 17 breakpoints"
+   },
+   "f_tanh": {
+    "max_abs": 3.4081057420642935e-11,
+    "over_amplitude": 3.5352782560393755e-11,
+    "realisation": "computing elements"
+   },
+   "f_abs": {
+    "max_abs": 1.6431300764452317e-14,
+    "over_amplitude": 1.6431300764452317e-14,
+    "realisation": "computing elements"
+   }
+  },
+  "balanced-ternary-addition": {
+   "pass": 4240,
+   "fail": 0,
+   "skipped": 81,
+   "vectors_sha256": "a11c479543fc18f620a9cfa5a48f38a39cd687073a05157c5ec0d2b2ff02c8fe"
+  }
+ },
+ "seconds": 28.091
+}

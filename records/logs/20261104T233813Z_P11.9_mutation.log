@@ -1,0 +1,139 @@
+$ node tests/p11_9_mutation.test.mjs
+PASS control: unmutated exponential-decay passes the oracle and the model check: error over amplitude 1.92e-12 (bound 1e-4)
+PASS exponential-decay summer sign I_x.inputs[0]: error over amplitude 1.48e+2 (bound 1e-4); model check refuses (SEMANTIC at elements[0])
+PASS exponential-decay coefficient I_x.inputs[0] x1.1: error over amplitude 3.50e-2 (bound 1e-4); model check refuses (SEMANTIC at elements[0])
+PASS exponential-decay initial condition I_x.ic: error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[0].ic)
+PASS control: unmutated harmonic-oscillator passes the oracle and the model check: error over amplitude 5.24e-8 (bound 1e-4)
+PASS harmonic-oscillator summer sign I_v.inputs[0]: error over amplitude 1.18e+17 (bound 1e-4); model check refuses (SEMANTIC at elements[0])
+PASS harmonic-oscillator coefficient I_v.inputs[0] x1.1: error over amplitude 1.69e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[0])
+PASS harmonic-oscillator initial condition I_v.ic: error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[0].ic)
+PASS harmonic-oscillator summer sign N_v (inverter made a unit coefficient): error over amplitude 1.18e+17 (bound 1e-4); model check refuses (SEMANTIC at elements[1])
+PASS harmonic-oscillator summer sign I_x.inputs[0]: error over amplitude 1.18e+17 (bound 1e-4); model check refuses (SEMANTIC at elements[2])
+PASS harmonic-oscillator coefficient I_x.inputs[0] x1.1: error over amplitude 1.61e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[2])
+PASS harmonic-oscillator initial condition I_x.ic: error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[2].ic)
+PASS control: unmutated damped-driven-oscillator passes the oracle and the model check: error over amplitude 7.46e-10 (bound 1e-4)
+PASS damped-driven-oscillator summer sign I_c.inputs[0]: error over amplitude 2.75e+9 (bound 1e-4); model check refuses (SEMANTIC at elements[0])
+PASS damped-driven-oscillator coefficient I_c.inputs[0] x1.1: error over amplitude 1.05e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[0])
+PASS damped-driven-oscillator initial condition I_c.ic: error over amplitude 1.51e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[0].ic)
+PASS damped-driven-oscillator summer sign N_c (inverter made a unit coefficient): error over amplitude 2.75e+9 (bound 1e-4); model check refuses (SEMANTIC at elements[1])
+PASS damped-driven-oscillator summer sign I_s.inputs[0]: error over amplitude 2.75e+9 (bound 1e-4); model check refuses (SEMANTIC at elements[2])
+PASS damped-driven-oscillator coefficient I_s.inputs[0] x1.1: error over amplitude 1.05e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[2])
+PASS damped-driven-oscillator initial condition I_s.ic: error over amplitude 1.44e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[2].ic)
+PASS damped-driven-oscillator summer sign I_v.inputs[0]: error over amplitude 7.37e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[3])
+PASS damped-driven-oscillator coefficient I_v.inputs[0] x1.1: error over amplitude 4.69e-2 (bound 1e-4); model check refuses (SEMANTIC at elements[3])
+PASS damped-driven-oscillator summer sign I_v.inputs[1]: error over amplitude 3.62e+11 (bound 1e-4); model check refuses (SEMANTIC at elements[3])
+PASS damped-driven-oscillator coefficient I_v.inputs[1] x1.1: error over amplitude 2.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[3])
+PASS damped-driven-oscillator summer sign I_v.inputs[2]: error over amplitude 2.42e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[3])
+PASS damped-driven-oscillator coefficient I_v.inputs[2] x1.1: error over amplitude 1.21e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[3])
+PASS damped-driven-oscillator initial condition I_v.ic: error over amplitude 1.38e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[3].ic)
+PASS damped-driven-oscillator summer sign N_v (inverter made a unit coefficient): error over amplitude 2.03e+11 (bound 1e-4); model check refuses (SEMANTIC at elements[4])
+PASS damped-driven-oscillator summer sign I_x.inputs[0]: error over amplitude 2.03e+11 (bound 1e-4); model check refuses (SEMANTIC at elements[5])
+PASS damped-driven-oscillator coefficient I_x.inputs[0] x1.1: error over amplitude 2.33e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[5])
+PASS damped-driven-oscillator initial condition I_x.ic: error over amplitude 1.39e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[5].ic)
+PASS control: unmutated lorenz passes the oracle and the model check: max abs error 6.59e-8 (bound 1e-6)
+PASS lorenz summer sign I_x.inputs[0]: run refused: NONFINITE at I_y: state I_y is -Infinity at machine time t=0.0637; model check refuses (SEMANTIC at elements[0])
+PASS lorenz coefficient I_x.inputs[0] x1.1: max abs error 8.10e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[0])
+PASS lorenz summer sign I_x.inputs[1]: max abs error 4.64e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[0])
+PASS lorenz coefficient I_x.inputs[1] x1.1: max abs error 7.97e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[0])
+PASS lorenz initial condition I_x.ic: max abs error 2.49e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[0].ic)
+PASS lorenz summer sign N_x (inverter made a unit coefficient): max abs error 4.64e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[1])
+PASS lorenz summer sign I_y.inputs[0]: max abs error 4.64e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[2])
+PASS lorenz coefficient I_y.inputs[0] x1.1: max abs error 9.09e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[2])
+PASS lorenz summer sign I_y.inputs[1]: run refused: NONFINITE at I_y: state I_y is Infinity at machine time t=0.0351; model check refuses (SEMANTIC at elements[2])
+PASS lorenz coefficient I_y.inputs[1] x1.1: max abs error 4.67e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[2])
+PASS lorenz summer sign I_y.inputs[2]: max abs error 2.91e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[2])
+PASS lorenz coefficient I_y.inputs[2] x1.1: max abs error 1.34e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[2])
+PASS lorenz initial condition I_y.ic: max abs error 2.74e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[2].ic)
+PASS lorenz summer sign N_y (inverter made a unit coefficient): max abs error 4.64e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[3])
+PASS lorenz summer sign I_z.inputs[0]: run refused: NONFINITE at I_y: state I_y is Infinity at machine time t=0.036000000000000004; model check refuses (SEMANTIC at elements[4])
+PASS lorenz coefficient I_z.inputs[0] x1.1: max abs error 2.19e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[4])
+PASS lorenz summer sign I_z.inputs[1]: run refused: NONFINITE at I_y: state I_y is Infinity at machine time t=0.41910000000000003; model check refuses (SEMANTIC at elements[4])
+PASS lorenz coefficient I_z.inputs[1] x1.1: max abs error 6.08e+0 (bound 1e-6); model check refuses (SEMANTIC at elements[4])
+PASS lorenz initial condition I_z.ic: max abs error 1.50e+1 (bound 1e-6); model check refuses (SEMANTIC at elements[4].ic)
+PASS control: unmutated function-generation passes the oracle and the model check: worst element-realised function error over amplitude 3.54e-11 (bound 1e-4)
+PASS function-generation summer sign I_x.inputs[0]: worst element-realised function error over amplitude 2.00e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[1])
+PASS function-generation coefficient I_x.inputs[0] x1.1: worst element-realised function error over amplitude 2.10e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[1])
+PASS function-generation initial condition I_x.ic: worst element-realised function error over amplitude 2.66e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[1].ic)
+PASS function-generation summer sign I_S.inputs[0]: worst element-realised function error over amplitude 1.15e+1 (bound 1e-4); model check refuses (SEMANTIC at elements[2])
+PASS function-generation coefficient I_S.inputs[0] x1.1: worst element-realised function error over amplitude 1.60e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[2])
+PASS function-generation initial condition I_S.ic: worst element-realised function error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[2].ic)
+PASS function-generation summer sign I_C.inputs[0]: worst element-realised function error over amplitude 1.15e+1 (bound 1e-4); model check refuses (SEMANTIC at elements[3])
+PASS function-generation coefficient I_C.inputs[0] x1.1: worst element-realised function error over amplitude 1.46e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[3])
+PASS function-generation initial condition I_C.ic: worst element-realised function error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[3].ic)
+PASS function-generation summer sign N_C (inverter made a unit coefficient): worst element-realised function error over amplitude 1.15e+1 (bound 1e-4); model check refuses (SEMANTIC at elements[4])
+PASS function-generation summer sign I_E.inputs[0]: worst element-realised function error over amplitude 2.35e+0 (bound 1e-4); model check refuses (SEMANTIC at elements[5])
+PASS function-generation coefficient I_E.inputs[0] x1.1: worst element-realised function error over amplitude 3.50e-2 (bound 1e-4); model check refuses (SEMANTIC at elements[5])
+PASS function-generation initial condition I_E.ic: worst element-realised function error over amplitude 1.25e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[5].ic)
+PASS function-generation summer sign I_T.inputs[0]: run refused: NONFINITE at I_T: state I_T is -Infinity at machine time t=0.00204; model check refuses (SEMANTIC at elements[7])
+PASS function-generation coefficient I_T.inputs[0] x1.1: worst element-realised function error over amplitude 5.27e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[7])
+PASS function-generation summer sign I_T.inputs[1]: run refused: NONFINITE at I_T: state I_T is Infinity at machine time t=0.00587; model check refuses (SEMANTIC at elements[7])
+PASS function-generation coefficient I_T.inputs[1] x1.1: run refused: NONFINITE at I_T: state I_T is -Infinity at machine time t=0.00623; model check refuses (SEMANTIC at elements[7])
+PASS function-generation initial condition I_T.ic: worst element-realised function error over amplitude 7.72e-1 (bound 1e-4); model check refuses (SEMANTIC at elements[7].ic)
+PASS control: unmutated balanced ternary adder passes: 0 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign S_0.inputs[0]: 2763 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient S_0.inputs[0] x1.1: 2763 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign S_0.inputs[1]: 2873 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient S_0.inputs[1] x1.1: 2873 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CP_0.inputs[0]: 959 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CP_0.inputs[0] x1.7: 914 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CP_0.inputs[1]: 3281 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CP_0.inputs[1] x1.7: 493 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CN_0.inputs[0]: 959 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CN_0.inputs[0] x1.7: 986 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CN_0.inputs[1]: 3281 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CN_0.inputs[1] x1.7: 466 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign Z_0.inputs[0]: 2859 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient Z_0.inputs[0] x1.1: 2859 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign Z_0.inputs[1]: 493 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient Z_0.inputs[1] x1.1: 493 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign Z_0.inputs[2]: 466 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient Z_0.inputs[2] x1.1: 466 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign S_1.inputs[0]: 2859 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient S_1.inputs[0] x1.1: 2859 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign S_1.inputs[1]: 2798 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient S_1.inputs[1] x1.1: 2798 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign S_1.inputs[2]: 493 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient S_1.inputs[2] x1.1: 493 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign S_1.inputs[3]: 466 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient S_1.inputs[3] x1.1: 466 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CP_1.inputs[0]: 1027 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CP_1.inputs[0] x1.7: 983 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CP_1.inputs[1]: 3213 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CP_1.inputs[1] x1.7: 464 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CN_1.inputs[0]: 1027 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CN_1.inputs[0] x1.7: 964 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CN_1.inputs[1]: 3213 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CN_1.inputs[1] x1.7: 454 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign Z_1.inputs[0]: 2974 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient Z_1.inputs[0] x1.1: 2974 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign Z_1.inputs[1]: 521 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient Z_1.inputs[1] x1.1: 521 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign Z_1.inputs[2]: 506 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient Z_1.inputs[2] x1.1: 506 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign S_15.inputs[0]: 2785 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient S_15.inputs[0] x1.1: 2785 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign S_15.inputs[1]: 2781 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient S_15.inputs[1] x1.1: 2781 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign S_15.inputs[2]: 502 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient S_15.inputs[2] x1.1: 502 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign S_15.inputs[3]: 556 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient S_15.inputs[3] x1.1: 556 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CP_15.inputs[0]: 1049 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CP_15.inputs[0] x1.7: 972 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CP_15.inputs[1]: 3191 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CP_15.inputs[1] x1.7: 455 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CN_15.inputs[0]: 1049 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CN_15.inputs[0] x1.7: 920 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign CN_15.inputs[1]: 3191 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient CN_15.inputs[1] x1.7: 470 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign Z_15.inputs[0]: 2941 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient Z_15.inputs[0] x1.1: 2941 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign Z_15.inputs[1]: 512 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient Z_15.inputs[1] x1.1: 512 of 4240 vectors wrong
+PASS balanced-ternary-addition summer sign Z_15.inputs[2]: 537 of 4240 vectors wrong
+PASS balanced-ternary-addition coefficient Z_15.inputs[2] x1.1: 537 of 4240 vectors wrong
+PASS all three defect kinds planted: summer sign, coefficient, initial condition
+mutation score: 127/127 caught by the oracle comparison; 65 also refused by the static model check
+[P11.9_mutation] 134 passed, 0 failed; results reports/results/P11.9_mutation.json
+
+[exit 0]

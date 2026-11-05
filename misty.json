@@ -1,0 +1,18 @@
+{
+  "upload_type": "software",
+  "title": "anasim: analogue computer simulator",
+  "version": "0.1.0",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Choudhary, Abhishek",
+      "affiliation": "AyeAI",
+      "orcid": "0009-0002-0684-8320"
+    }
+  ],
+  "description": "Analogue computer simulator in the repsynth 0.3.0 build, using the shared subcore and uPlot.",
+  "keywords": ["analogue computer", "simulation", "representation synthesis"],
+  "license": "gpl-3.0-or-later",
+  "access_right": "open",
+  "notes": "Copyright (c) 1993-2026 Abhishek Choudhary. All rights reserved. AyeAI."
+}

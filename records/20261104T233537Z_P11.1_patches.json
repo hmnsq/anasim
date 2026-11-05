@@ -1,0 +1,226 @@
+{
+ "packet": "P11.1",
+ "step": "patches",
+ "command": "node tests/p11_1_patches.test.mjs",
+ "exit_code": 0,
+ "started_utc": "2026-11-04T23:35:37.264Z",
+ "finished_utc": "2026-11-04T23:35:38.284Z",
+ "inputs": {
+  "spec/patch.schema.json": "2cd90ec3090080738bfcc90afc1d45c576356110c78416123c65d7f4ad22a636",
+  "docs/programs/balanced-ternary-addition.patch.yaml": "bbdf553b10a2e8df71a4d141abb7703565c4ed97022f16fddd203057aec84861",
+  "docs/programs/damped-driven-oscillator.patch.yaml": "3c24c92666d465a043bc5d7970418df0ab19d75bb0b516ab641799d242065d74",
+  "docs/programs/exponential-decay.patch.yaml": "e34bc60191edd0dc13b87651b830bf1e4e560d0c27082ca880cad1e156c55103",
+  "docs/programs/function-generation.patch.yaml": "b19187c17574bfde659b21b17b4a1950c8bef435f193e843af5587da65227f84",
+  "docs/programs/harmonic-oscillator-overload.patch.yaml": "9ddb0279c31f7b8b8156e2f2b84a63be6fde4796956c8cee0d407ee15cb5869c",
+  "docs/programs/harmonic-oscillator.patch.yaml": "8bc02e663e95b63d16196b0e8666d3f36c7209c22de5e0bf092fc8ffdb123281",
+  "docs/programs/lorenz-overload.patch.yaml": "7f5bf8e4191acd6d45232565dd9b3cd18a27fdb728bd5c024e82efe11aa5c8a1",
+  "docs/programs/lorenz.patch.yaml": "4dc77c05a1cbe838bd3c6ccc6732c681ced6f58ad5c5583f3fe6d5ce21c6b812",
+  "tests/defects/algebraic-loop.patch.yaml": "96e189ba09e375b25500b14f04a2aaea92ef587f9529960eb11cfcc6b9c9c18f",
+  "tests/defects/algebraic-self-loop.patch.yaml": "340c47ccf102af2c04befe2bd4124efbba917189f472a83fc7fd14f89d6d4be5",
+  "tests/defects/dangling-input.patch.yaml": "779ef2bbd681981b9a05a3f0794e11360c44f0d34f54e2d1ef7ad0fac3ae0b95",
+  "tests/defects/unconnected-empty.patch.yaml": "d0e88ac1b87ffdd956e929b6f7b19690d5104c87d9d73789eca0d10cac366098",
+  "tests/defects/unconnected-input.patch.yaml": "4083d8af18938e1420ff6625dd83509be3f7e4bc2109664bf02a0c444ee2f5cb",
+  "docs/src/anasim.js": "ed90b4c40ea41c128f52649f9e655f54304200f837bfee498d46e93bf50f05dd",
+  "docs/src/compile/assemble.js": "01eca67237d757ed2cd39fb2db8cf0197fcfe76705e877429444509141ce2a66",
+  "docs/src/compile/predict.js": "741c80d3d00c7721803ef518034e1bfcd6f405743fe2b4e3efb9c9cb1516a896",
+  "docs/src/compile/scale.js": "95f9590d67d8d644729272d2a36866af17b46209216b87739b7dd2337ed72183",
+  "docs/src/core.js": "142503a44c289204e4eac4321fe3f28fdb842f9733ed27f356af24c148674830",
+  "docs/src/elements/coefficient.js": "9184d003ca9cd6f178318ac2ac9bcb5266660a2421dfefb8428c11cd4aca38ac",
+  "docs/src/elements/comparator.js": "eb7af14df69cc21458cddd9f9a1abf6d158776ee8255b07a0b3b9ec9709ccc0a",
+  "docs/src/elements/constant.js": "4c7bb8b084cb29387f118b11af494b45ad63ae3aba7715f76975c841992b6340",
+  "docs/src/elements/function_generator.js": "acf443aa8b6c375ddc4c2453434961955817167836be07ba333f57f16667a426",
+  "docs/src/elements/index.js": "79b5f4f917040ad0239ac10ef9365e9dffeb4dfb192b79799b002c0c0891626c",
+  "docs/src/elements/integrator.js": "23f5b84129c77d7c07aae3954a3dc15c54f43e4a598a524392e5c4c4f266d4eb",
+  "docs/src/elements/inverter.js": "f84685b14f65cb0dd3c655e83671a42b6e5dc80194534718d96568f69b7c1ead",
+  "docs/src/elements/limiter.js": "db9d1c6dd4dbf9e193215aac0e538e41d16380d01fa0f396b103533b83e8b3bc",
+  "docs/src/elements/multiplier.js": "d3bd40d788a424cf8a382cfbbfce34d939ede05da7d69234651b7c5eaa44b953",
+  "docs/src/elements/sample_hold.js": "5db0513020774d06bb2723fc8ce15e00643d7bc547dac985a89bef6f8bcb3911",
+  "docs/src/elements/summer.js": "ef45ca0be8734b6dc1f779a921968dc8f11e1c951b78a9304aaeec938c219474",
+  "docs/src/patch.js": "0d6cf70eee62f4a1fa31ad408242e13a688bc11e8aded70d9d054208f5d212d4",
+  "docs/src/sim.js": "3a33b908dd4d9b4b798f3b17c42cc7e6eeb46e3f9b561d713db4feb0103616a9"
+ },
+ "outputs": {
+  "records/logs/20261104T233537Z_P11.1_patches.log": "a904ca03d6ede361b090dcf5ee1a32a16ef40910cd0977dac60a09e9b09d0a8e"
+ },
+ "tool_versions": {
+  "node": "v22.23.4",
+  "python3": "3.13.18",
+  "jsonschema": "4.26.0"
+ },
+ "image_digests": {},
+ "results": {
+  "test": "P11.1_patches",
+  "passed": 15,
+  "failed": 0,
+  "checks": [
+   {
+    "id": "valid docs/programs/balanced-ternary-addition.patch.yaml",
+    "ok": true,
+    "summary": "97 elements; graph check 0 error(s), schema 0 error(s)",
+    "graph_errors": [],
+    "schema_errors": []
+   },
+   {
+    "id": "valid docs/programs/damped-driven-oscillator.patch.yaml",
+    "ok": true,
+    "summary": "6 elements; graph check 0 error(s), schema 0 error(s)",
+    "graph_errors": [],
+    "schema_errors": []
+   },
+   {
+    "id": "valid docs/programs/exponential-decay.patch.yaml",
+    "ok": true,
+    "summary": "1 elements; graph check 0 error(s), schema 0 error(s)",
+    "graph_errors": [],
+    "schema_errors": []
+   },
+   {
+    "id": "valid docs/programs/function-generation.patch.yaml",
+    "ok": true,
+    "summary": "12 elements; graph check 0 error(s), schema 0 error(s)",
+    "graph_errors": [],
+    "schema_errors": []
+   },
+   {
+    "id": "valid docs/programs/harmonic-oscillator-overload.patch.yaml",
+    "ok": true,
+    "summary": "3 elements; graph check 0 error(s), schema 0 error(s)",
+    "graph_errors": [],
+    "schema_errors": []
+   },
+   {
+    "id": "valid docs/programs/harmonic-oscillator.patch.yaml",
+    "ok": true,
+    "summary": "3 elements; graph check 0 error(s), schema 0 error(s)",
+    "graph_errors": [],
+    "schema_errors": []
+   },
+   {
+    "id": "valid docs/programs/lorenz-overload.patch.yaml",
+    "ok": true,
+    "summary": "7 elements; graph check 0 error(s), schema 0 error(s)",
+    "graph_errors": [],
+    "schema_errors": []
+   },
+   {
+    "id": "valid docs/programs/lorenz.patch.yaml",
+    "ok": true,
+    "summary": "7 elements; graph check 0 error(s), schema 0 error(s)",
+    "graph_errors": [],
+    "schema_errors": []
+   },
+   {
+    "id": "a patch for every CMS-03 model",
+    "ok": true,
+    "summary": "6 models; missing: none",
+    "models": [
+     "balanced-ternary-addition",
+     "damped-driven-oscillator",
+     "exponential-decay",
+     "function-generation",
+     "harmonic-oscillator",
+     "lorenz"
+    ]
+   },
+   {
+    "id": "refused tests/defects/algebraic-loop.patch.yaml",
+    "ok": true,
+    "summary": "planted ALGEBRAIC_LOOP; refused with ALGEBRAIC_LOOP at elements[1]: algebraic loop without an integrator: S_a -> S_b -> S_a; schema: accepts (graph check needed)"
+   },
+   {
+    "id": "refused tests/defects/algebraic-self-loop.patch.yaml",
+    "ok": true,
+    "summary": "planted ALGEBRAIC_LOOP; refused with ALGEBRAIC_LOOP at elements[1]: algebraic loop without an integrator: N_v -> N_v; schema: accepts (graph check needed)"
+   },
+   {
+    "id": "refused tests/defects/dangling-input.patch.yaml",
+    "ok": true,
+    "summary": "planted UNKNOWN_ELEMENT; refused with UNKNOWN_ELEMENT at elements[0].inputs[0].from: no element named 'I_q'; schema: accepts (graph check needed)"
+   },
+   {
+    "id": "refused tests/defects/unconnected-empty.patch.yaml",
+    "ok": true,
+    "summary": "planted UNCONNECTED; refused with UNCONNECTED at elements[1].inputs: a inverter takes 1 input(s), found 0; schema: elements/1/inputs: [] should be non-empty"
+   },
+   {
+    "id": "refused tests/defects/unconnected-input.patch.yaml",
+    "ok": true,
+    "summary": "planted UNCONNECTED; refused with UNCONNECTED at elements[0].inputs[0]: input is not connected to any element; schema: elements/0/inputs/0: 'from' is a required property"
+   },
+   {
+    "id": "both required defect kinds planted",
+    "ok": true,
+    "summary": "ALGEBRAIC_LOOP, UNKNOWN_ELEMENT, UNCONNECTED"
+   }
+  ],
+  "planted": {
+   "tests/defects/algebraic-loop.patch.yaml": {
+    "planted": "ALGEBRAIC_LOOP",
+    "refused_by_graph_check": [
+     {
+      "code": "ALGEBRAIC_LOOP",
+      "path": "elements[1]",
+      "message": "algebraic loop without an integrator: S_a -> S_b -> S_a"
+     }
+    ],
+    "refused_by_schema": []
+   },
+   "tests/defects/algebraic-self-loop.patch.yaml": {
+    "planted": "ALGEBRAIC_LOOP",
+    "refused_by_graph_check": [
+     {
+      "code": "ALGEBRAIC_LOOP",
+      "path": "elements[1]",
+      "message": "algebraic loop without an integrator: N_v -> N_v"
+     }
+    ],
+    "refused_by_schema": []
+   },
+   "tests/defects/dangling-input.patch.yaml": {
+    "planted": "UNKNOWN_ELEMENT",
+    "refused_by_graph_check": [
+     {
+      "code": "UNKNOWN_ELEMENT",
+      "path": "elements[0].inputs[0].from",
+      "message": "no element named 'I_q'"
+     }
+    ],
+    "refused_by_schema": []
+   },
+   "tests/defects/unconnected-empty.patch.yaml": {
+    "planted": "UNCONNECTED",
+    "refused_by_graph_check": [
+     {
+      "code": "UNCONNECTED",
+      "path": "elements[1].inputs",
+      "message": "a inverter takes 1 input(s), found 0"
+     }
+    ],
+    "refused_by_schema": [
+     "elements/1/inputs: [] should be non-empty"
+    ]
+   },
+   "tests/defects/unconnected-input.patch.yaml": {
+    "planted": "UNCONNECTED",
+    "refused_by_graph_check": [
+     {
+      "code": "UNCONNECTED",
+      "path": "elements[0].inputs[0]",
+      "message": "input is not connected to any element"
+     }
+    ],
+    "refused_by_schema": [
+     "elements/0/inputs/0: 'from' is a required property"
+    ]
+   }
+  },
+  "defect_kinds": [
+   "ALGEBRAIC_LOOP",
+   "UNKNOWN_ELEMENT",
+   "UNCONNECTED"
+  ],
+  "seconds": 0.883
+ },
+ "state": "done",
+ "notes": "log: records/logs/20261104T233537Z_P11.1_patches.log"
+}

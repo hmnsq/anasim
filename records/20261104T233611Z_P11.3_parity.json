@@ -1,0 +1,21 @@
+{
+ "packet": "P11.3",
+ "step": "parity",
+ "command": "node tools/parity.mjs",
+ "exit_code": 0,
+ "started_utc": "2026-11-04T23:36:11.571Z",
+ "finished_utc": "2026-11-04T23:36:14.928Z",
+ "inputs": {},
+ "outputs": {
+  "reports/parity/P11.3.json": "c90cc0b39361d82a123afe464d8ec1ee173c518ce277ec3c591ef05efb0f9b1f",
+  "records/logs/20261104T233611Z_P11.3_parity.log": "13f4363e035c6f9c884d95d4e22ad20fb5fe3bbb8645c4ef1a846f58318f33c5"
+ },
+ "tool_versions": {
+  "node": "v22.23.4",
+  "playwright": "1.63.0"
+ },
+ "image_digests": {},
+ "results": {},
+ "state": "done",
+ "notes": "log: records/logs/20261104T233611Z_P11.3_parity.log"
+}

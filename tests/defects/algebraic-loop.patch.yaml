@@ -1,0 +1,16 @@
+_notice: "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0"
+format: anasim-patch 1
+patch:
+  id: defect_algebraic_loop
+  version: 0.1.0
+  title: "Planted defect: ALGEBRAIC_LOOP"
+  description: Two summers feed each other with no integrator in the loop.
+  model: {id: harmonic-oscillator, version: 1.0.0}
+  planted_defect: ALGEBRAIC_LOOP
+elements:
+  - {id: I_v, kind: integrator, represents: v, max: 2.5, ic: v_0, inputs: [{from: I_x, weight: "omega^2"}]}
+  - {id: S_a, kind: summer, represents: -v, max: 2.5, inputs: [{from: I_v, weight: 1}, {from: S_b, weight: 0.5}]}
+  - {id: S_b, kind: summer, represents: v, max: 2.5, inputs: [{from: S_a, weight: 1}]}
+  - {id: I_x, kind: integrator, represents: x, max: 1.25, ic: x_0, inputs: [{from: S_a, weight: 1}]}
+outputs:
+  - {name: x, element: I_x}

@@ -1,0 +1,35 @@
+_notice: "© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. SPDX-License-Identifier: CC0-1.0"
+format: anasim-patch 1
+patch:
+  id: function_generation
+  version: 0.1.0
+  title: Function generation y = f(x)
+  description: >-
+    The seven functions of the model on 0 <= x <= 1, with x = t produced by a ramp. sin, exp, square and tanh are
+    exact realisations by integrators and multipliers; abs is a function generator with exact breakpoints; sqrt
+    and log are function generators through 17 breakpoints, approximations whose bound is measured.
+  model: {id: function-generation, version: 1.0.0}
+  generator: "tools/gen_patches.mjs 0.1.0, from model sha256 e6291e79534b604cf3a7970998f09b1058f8e529c53544990e09013bdeda5e04"
+machine: {time_scale: auto}
+elements:
+  - {id: K_m1, kind: constant, represents: "-1", value: -1.0, label: "reference -1", position: [0.0, 0.0]}
+  - {id: I_x, kind: integrator, represents: x, max: 1.25, ic: 0.0, inputs: [{from: K_m1, weight: 1.0}], label: "ramp x = t", position: [1.0, 0.0]}
+  - {id: I_S, kind: integrator, represents: "sin(pi*x)", max: 1.25, ic: 0.0, inputs: [{from: N_C, weight: pi}], position: [1.0, 1.0]}
+  - {id: I_C, kind: integrator, represents: "cos(pi*x)", max: 1.25, ic: 1.0, inputs: [{from: I_S, weight: pi}], position: [2.0, 1.0]}
+  - {id: N_C, kind: inverter, represents: "-cos(pi*x)", inputs: [{from: I_C}], position: [3.0, 1.0]}
+  - {id: I_E, kind: integrator, represents: "exp(-x)", max: 1.25, ic: 1.0, inputs: [{from: I_E, weight: 1.0}], position: [1.0, 2.0]}
+  - {id: P_sq, kind: multiplier, represents: "x^2", max: 1.25, inputs: [{from: I_x}, {from: I_x}], position: [2.0, 0.0]}
+  - {id: I_T, kind: integrator, represents: "tanh(4*x - 2)", max: 1.25, ic: "tanh(0 - 2)", inputs: [{from: K_m1, weight: 4.0}, {from: P_TT, weight: 4.0}], position: [1.0, 3.0]}
+  - {id: P_TT, kind: multiplier, represents: "tanh(4*x - 2)^2", max: 1.25, inputs: [{from: I_T}, {from: I_T}], position: [2.0, 3.0]}
+  - {id: G_abs, kind: function_generator, represents: "abs(2*x - 1)", max: 1.25, inputs: [{from: I_x}], breakpoints: [[0.0, 1.0], [0.5, 0.0], [1.0, 1.0]], position: [3.0, 0.0]}
+  - {id: G_sqrt, kind: function_generator, represents: "sqrt(x)", max: 1.25, inputs: [{from: I_x}], breakpoints: [[0.0, 0.0], [0.00390625, 0.0625], [0.015625, 0.125], [0.03515625, 0.1875], [0.0625, 0.25], [0.09765625, 0.3125], [0.140625, 0.375], [0.19140625, 0.4375], [0.25, 0.5], [0.31640625, 0.5625], [0.390625, 0.625], [0.47265625, 0.6875], [0.5625, 0.75], [0.66015625, 0.8125], [0.765625, 0.875], [0.87890625, 0.9375], [1.0, 1.0]], position: [3.0, 2.0]}
+  - {id: G_log, kind: function_generator, represents: "log(1 + x)", max: 1.25, inputs: [{from: I_x}], breakpoints: [[0.0, 0.0], [0.0625, 0.06062462181643484], [0.125, 0.11778303565638346], [0.1875, 0.17185025692665923], [0.25, 0.22314355131420976], [0.3125, 0.27193371548364176], [0.375, 0.3184537311185346], [0.4375, 0.3629054936893684], [0.5, 0.4054651081081644], [0.5625, 0.44628710262841953], [0.625, 0.48550781578170077], [0.6875, 0.5232481437645479], [0.75, 0.5596157879354227], [0.8125, 0.5947071077466928], [0.875, 0.6286086594223741], [0.9375, 0.661398482245365], [1.0, 0.6931471805599453]], position: [3.0, 3.0]}
+outputs:
+  - {name: f_sin, element: I_S}
+  - {name: f_exp, element: I_E}
+  - {name: f_square, element: P_sq}
+  - {name: f_sqrt, element: G_sqrt}
+  - {name: f_log, element: G_log}
+  - {name: f_tanh, element: I_T}
+  - {name: f_abs, element: G_abs}
+run: {t1: 1.0, h: 0.001}
